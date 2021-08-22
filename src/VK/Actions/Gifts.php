@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
 
@@ -19,8 +20,8 @@ class Gifts extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('gifts.get', $access_token, $params);
+		return $this->request->post('gifts.get', $access_token, $params, $apiTokenType);
 	}
 }

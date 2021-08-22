@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Ads;
 
-class AdsSection
+interface AdsSection
 {
 	public const BROWSERS = 'browsers';
 	public const CITIES = 'cities';

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Newsfeed;
 
-class NewsfeedFilters
+interface NewsfeedFilters
 {
 	public const NOTE = 'note';
 	public const PHOTO = 'photo';

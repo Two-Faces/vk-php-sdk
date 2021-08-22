@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Utils;
 
-class UtilsSource
+interface UtilsSource
 {
 	public const VK_CC = 'vk_cc';
 	public const VK_LINK = 'vk_link';

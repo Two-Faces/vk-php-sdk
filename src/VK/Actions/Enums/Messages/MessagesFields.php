@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Messages;
 
-class MessagesFields
+interface MessagesFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

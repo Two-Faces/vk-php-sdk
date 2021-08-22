@@ -97,19 +97,11 @@ class VKCallbackApiLongPollExecutor
 			
 			$this->last_ts = $response[static::EVENTS_TS];
 		}
-		catch (VKLongPollServerKeyExpiredException $e)
+		catch (VKLongPollServerKeyExpiredException)
 		{
 			$this->server = $this->getLongPollServer();
 		}
-		catch (JsonException $e)
-		{
-		}
-		catch (VKLongPollServerTsException $e)
-		{
-		}
-		catch (VKClientException $e)
-		{
-		}
+		catch (JsonException|VKLongPollServerTsException|VKClientException){}
 		
 		return $this->last_ts;
 	}
@@ -123,11 +115,20 @@ class VKCallbackApiLongPollExecutor
 	 */
 	protected function getLongPollServer(): array
 	{
-		$params = [static::PARAM_GROUP_ID => $this->group_id];
+		$params = [
+			static::PARAM_GROUP_ID => $this->group_id
+		];
 		
-		$server = $this->api_client->groups()->getLongPollServer($this->access_token, $params);
+		$server = $this->api_client->groups()->getLongPollServer(
+			$this->access_token,
+			$params
+		);
 		
-		return [static::SERVER_URL => $server['server'], static::SERVER_TIMESTAMP => $server['ts'], static::SERVER_KEY => $server['key'],];
+		return [
+			static::SERVER_URL => $server['server'],
+			static::SERVER_TIMESTAMP => $server['ts'],
+			static::SERVER_KEY => $server['key'],
+		];
 	}
 	
 	/**
@@ -215,7 +216,7 @@ class VKCallbackApiLongPollExecutor
 	{
 		$decoded_body = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
 		
-		if ($decoded_body === null || !is_array($decoded_body))
+		if (!is_array($decoded_body))
 		{
 			$decoded_body = [];
 		}

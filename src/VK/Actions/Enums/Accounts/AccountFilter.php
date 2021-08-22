@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Accounts;
 
-class AccountFilter
+interface AccountFilter
 {
 	public const EVENTS = 'events';
 	public const FRIENDS = 'friends';

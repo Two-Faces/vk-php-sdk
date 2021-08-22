@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Accounts;
 
-class AccountBdateVisibility
+interface AccountBdateVisibility
 {
 	public const HIDE = 0;
 	public const HIDE_YEAR = 2;

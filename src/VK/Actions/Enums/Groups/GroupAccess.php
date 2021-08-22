@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupAccess
+interface GroupAccess
 {
 	public const _PRIVATE = 2;
 	public const CLOSED = 1;

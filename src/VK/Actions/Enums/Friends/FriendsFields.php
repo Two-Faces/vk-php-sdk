@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Friends;
 
-class FriendsFields
+interface FriendsFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

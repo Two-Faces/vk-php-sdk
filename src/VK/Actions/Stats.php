@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiWallAccessPostException;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
@@ -26,9 +27,9 @@ class Stats extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('stats.get', $access_token, $params);
+		return $this->request->post('stats.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -43,9 +44,9 @@ class Stats extends Action
 	 * @throws VKApiWallAccessPostException Access to wall's post denied
 	 * @return mixed
 	 */
-	public function getPostReach(string $access_token, array $params = [])
+	public function getPostReach(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('stats.getPostReach', $access_token, $params);
+		return $this->request->post('stats.getPostReach', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -56,8 +57,8 @@ class Stats extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function trackVisitor(string $access_token, array $params = [])
+	public function trackVisitor(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('stats.trackVisitor', $access_token, $params);
+		return $this->request->post('stats.trackVisitor', $access_token, $params, $apiTokenType);
 	}
 }

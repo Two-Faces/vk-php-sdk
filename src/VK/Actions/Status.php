@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiStatusNoAudioException;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
@@ -19,9 +20,9 @@ class Status extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('status.get', $access_token, $params);
+		return $this->request->post('status.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -36,8 +37,8 @@ class Status extends Action
 	 * @throws VKApiStatusNoAudioException User disabled track name broadcast
 	 * @return mixed
 	 */
-	public function set(string $access_token, array $params = [])
+	public function set(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('status.set', $access_token, $params);
+		return $this->request->post('status.set', $access_token, $params, $apiTokenType);
 	}
 }

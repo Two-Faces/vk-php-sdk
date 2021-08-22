@@ -4,6 +4,7 @@ namespace VK\Client;
 
 use Exception;
 use JsonException;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\ExceptionMapper;
 use VK\Exceptions\Api\VKApiCaptchaException;
 use VK\Exceptions\VKApiException;
@@ -43,12 +44,13 @@ class VKApiRequest
 	 * @param string $method
 	 * @param string $access_token
 	 * @param array $params
+	 * @param int $apiTokenType
 	 *
 	 * @return mixed
-	 * @throws VKClientException
 	 * @throws VKApiException
+	 * @throws VKClientException
 	 */
-	public function post(string $method, string $access_token, array $params = [])
+	public function post(string $method, string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER): mixed
 	{
 		$params = $this->formatParams($params);
 		$params[static::PARAM_ACCESS_TOKEN] = $access_token;
@@ -67,7 +69,7 @@ class VKApiRequest
 		
 		try
 		{
-			$response = $this->http_client->post($url, $params);
+			$response = $this->getHttpResponse($url, $params, $apiTokenType);
 		}
 		catch (TransportRequestException $e)
 		{
@@ -91,7 +93,7 @@ class VKApiRequest
 				
 				try
 				{
-					$response = $this->http_client->post($url, $params);
+					$response = $this->getHttpResponse($url, $params, $apiTokenType);
 				}
 				catch (TransportRequestException $e)
 				{
@@ -161,10 +163,8 @@ class VKApiRequest
 			{
 				return $api_error;
 			}
-			else
-			{
-				throw $api_exception;
-			}
+			
+			throw $api_exception;
 		}
 		
 		return $decode_body[static::KEY_RESPONSE] ?? $decode_body;
@@ -206,7 +206,7 @@ class VKApiRequest
 	{
 		$decoded_body = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
 		
-		if ($decoded_body === null || !is_array($decoded_body))
+		if (!is_array($decoded_body))
 		{
 			$decoded_body = [];
 		}
@@ -225,5 +225,40 @@ class VKApiRequest
 		{
 			throw new VKClientException("Invalid http status: {$response->getHttpStatus()}");
 		}
+	}
+	
+	/**
+	 * Get throttled HTTP response.
+	 *
+	 * @throws TransportRequestException
+	 */
+	private function getHttpResponse(string $url, array $params, int $apiTokenType): TransportClientResponse
+	{
+		if (function_exists('throttle'))
+		{
+			$key = $params[static::PARAM_ACCESS_TOKEN];
+			$maxAttempts = match ($apiTokenType) {
+				VKApiTokenTypes::GROUP, VKApiTokenTypes::APP => 20,
+				default => 3
+			};
+			$decaySeconds = 1;
+			$callback = fn() => $this->http_client->post($url, $params);
+			
+			/**
+			 * Throttle callback calls for requests per seconds
+			 *
+			 * @param string $key
+			 * @param int $maxAttempts
+			 * @param int $decaySeconds
+			 * @param Closure $callback
+			 * @param int $secondsTimeout
+			 * @param float $secondsStep
+			 *
+			 * @return mixed
+			 */
+			return throttle($key, $maxAttempts, $decaySeconds, $callback);
+		}
+		
+		return $this->http_client->post($url, $params);
 	}
 }

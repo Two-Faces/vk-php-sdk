@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Boards;
 
-class BoardOrder
+interface BoardOrder
 {
 	public const AS_BY_ADMINISTRATOR = 0;
 	public const CREATED_ASC = -2;

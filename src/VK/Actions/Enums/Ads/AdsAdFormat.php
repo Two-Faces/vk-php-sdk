@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Ads;
 
-class AdsAdFormat
+interface AdsAdFormat
 {
 	public const BIG_IMAGE = 2;
 	public const COMMUNITY_SQUARE_IMAGE = 4;

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsRole
+interface GroupsRole
 {
 	public const ADMINISTRATOR = 'administrator';
 	public const EDITOR = 'editor';

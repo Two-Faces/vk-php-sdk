@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Apps;
 
-class AppsType
+interface AppsType
 {
 	public const INVITE = 'invite';
 	public const REQUEST = 'request';

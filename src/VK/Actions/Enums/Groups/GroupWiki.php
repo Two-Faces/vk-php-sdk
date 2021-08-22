@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupWiki
+interface GroupWiki
 {
 	public const DISABLED = 0;
 	public const LIMITED = 2;

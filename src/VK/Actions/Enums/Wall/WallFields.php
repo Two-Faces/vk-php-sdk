@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Wall;
 
-class WallFields
+interface WallFields
 {
 	public const ABOUT = 'about';
 	public const ACTION_BUTTON = 'action_button';

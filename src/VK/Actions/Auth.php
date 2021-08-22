@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiAuthDelayException;
 use VK\Exceptions\Api\VKApiAuthFloodException;
 use VK\Exceptions\Api\VKApiParamPhoneException;
@@ -27,9 +28,9 @@ class Auth extends Action
 	 * @throws VKApiParamPhoneException Invalid phone number
 	 * @return mixed
 	 */
-	public function checkPhone(string $access_token, array $params = [])
+	public function checkPhone(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('auth.checkPhone', $access_token, $params);
+		return $this->request->post('auth.checkPhone', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -44,8 +45,8 @@ class Auth extends Action
 	 * @throws VKApiAuthFloodException Too many auth attempts, try again later
 	 * @return mixed
 	 */
-	public function restore(string $access_token, array $params = [])
+	public function restore(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('auth.restore', $access_token, $params);
+		return $this->request->post('auth.restore', $access_token, $params, $apiTokenType);
 	}
 }

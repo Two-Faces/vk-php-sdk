@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Ads;
 
-class AdsLinkType
+interface AdsLinkType
 {
 	public const APPLICATION = 'application';
 	public const COMMUNITY = 'community';

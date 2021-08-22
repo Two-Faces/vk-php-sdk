@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Videos;
 
-class VideoReason
+interface VideoReason
 {
 	public const ADULT_MATERIAL = 5;
 	public const CHILD_PORNOGRAPHY = 1;

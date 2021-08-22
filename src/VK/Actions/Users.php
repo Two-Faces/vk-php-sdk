@@ -7,6 +7,7 @@ use VK\Actions\Enums\Users\UsersSex;
 use VK\Actions\Enums\Users\UsersSort;
 use VK\Actions\Enums\Users\UsersStatus;
 use VK\Actions\Enums\Users\UsersType;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
 
@@ -24,9 +25,9 @@ class Users extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('users.get', $access_token, $params);
+		return $this->request->post('users.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -43,9 +44,9 @@ class Users extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getFollowers(string $access_token, array $params = [])
+	public function getFollowers(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('users.getFollowers', $access_token, $params);
+		return $this->request->post('users.getFollowers', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -62,9 +63,9 @@ class Users extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getSubscriptions(string $access_token, array $params = [])
+	public function getSubscriptions(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('users.getSubscriptions', $access_token, $params);
+		return $this->request->post('users.getSubscriptions', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -77,9 +78,9 @@ class Users extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function isAppUser(string $access_token, array $params = [])
+	public function isAppUser(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('users.isAppUser', $access_token, $params);
+		return $this->request->post('users.isAppUser', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -94,9 +95,9 @@ class Users extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function report(string $access_token, array $params = [])
+	public function report(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('users.report', $access_token, $params);
+		return $this->request->post('users.report', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -141,8 +142,8 @@ class Users extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('users.search', $access_token, $params);
+		return $this->request->post('users.search', $access_token, $params, $apiTokenType);
 	}
 }

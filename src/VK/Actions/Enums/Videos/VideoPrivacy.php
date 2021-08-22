@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Videos;
 
-class VideoPrivacy
+interface VideoPrivacy
 {
 	public const ALL = '0';
 	public const FRIENDS = '1';

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsType
+interface GroupsType
 {
 	public const EVENT = 'event';
 	public const GROUP = 'group';

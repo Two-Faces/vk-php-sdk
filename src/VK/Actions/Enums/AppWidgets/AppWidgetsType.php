@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\AppWidgets;
 
-class AppWidgetsType
+interface AppWidgetsType
 {
 	public const _LIST = 'list';
 	public const COMPACT_LIST = 'compact_list';

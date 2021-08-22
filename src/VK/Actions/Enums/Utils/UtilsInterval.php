@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Utils;
 
-class UtilsInterval
+interface UtilsInterval
 {
 	public const DAY = 'day';
 	public const FOREVER = 'forever';

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Friends;
 
-class FriendsNameCase
+interface FriendsNameCase
 {
 	public const ACCUSATIVE = 'acc';
 	public const DATIVE = 'dat';

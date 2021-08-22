@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Messages;
 
-class MessagesFilter
+interface MessagesFilter
 {
 	public const ALL = 'all';
 	public const BUSINESS_NOTIFY = 'business_notify';

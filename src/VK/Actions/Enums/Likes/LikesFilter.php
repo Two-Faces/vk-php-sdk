@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Likes;
 
-class LikesFilter
+interface LikesFilter
 {
 	public const COPIES = 'copies';
 	public const LIKES = 'likes';

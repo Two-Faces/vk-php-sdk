@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Fave;
 
-class FaveType
+interface FaveType
 {
 	public const GROUPS = 'groups';
 	public const HINTS = 'hints';

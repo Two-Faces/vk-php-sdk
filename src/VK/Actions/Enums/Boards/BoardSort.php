@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Boards;
 
-class BoardSort
+interface BoardSort
 {
 	public const CHRONOLOGICAL = 'asc';
 	public const REVERSE_CHRONOLOGICAL = 'desc';

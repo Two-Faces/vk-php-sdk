@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Accounts;
 
-class AccountSex
+interface AccountSex
 {
 	public const FEMALE = 1;
 	public const MALE = 2;

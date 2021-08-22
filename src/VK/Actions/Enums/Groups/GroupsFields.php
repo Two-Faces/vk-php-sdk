@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsFields
+interface GroupsFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

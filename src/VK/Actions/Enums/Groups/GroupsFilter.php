@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsFilter
+interface GroupsFilter
 {
 	public const FRIENDS = 'friends';
 	public const UNSURE = 'unsure';

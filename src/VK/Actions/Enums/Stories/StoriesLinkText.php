@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Stories;
 
-class StoriesLinkText
+interface StoriesLinkText
 {
 	public const BOOK = 'book';
 	public const BUY = 'buy';

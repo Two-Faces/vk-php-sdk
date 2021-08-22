@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Ads;
 
-class AdsIdsType
+interface AdsIdsType
 {
 	public const AD = 'ad';
 	public const CAMPAIGN = 'campaign';

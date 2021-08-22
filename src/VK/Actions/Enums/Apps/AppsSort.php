@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Apps;
 
-class AppsSort
+interface AppsSort
 {
 	public const CREATE_DATE = 'create_date';
 	public const GROWTH_RATE = 'growth_rate';

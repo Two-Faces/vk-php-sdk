@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Videos;
 
-class VideoSort
+interface VideoSort
 {
 	public const DATE_ADDED = 0;
 	public const DURATION = 1;

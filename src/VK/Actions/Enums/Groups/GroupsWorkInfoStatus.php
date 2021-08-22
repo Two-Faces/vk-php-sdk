@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsWorkInfoStatus
+interface GroupsWorkInfoStatus
 {
 	public const ALWAYS_OPENED = 'always_opened';
 	public const FOREVER_CLOSED = 'forever_closed';

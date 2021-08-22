@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Users;
 
-class UsersStatus
+interface UsersStatus
 {
 	public const ACTIVELY_SEARCHING = 6;
 	public const COMPLICATED = 5;

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupDocs
+interface GroupDocs
 {
 	public const DISABLED = 0;
 	public const LIMITED = 2;

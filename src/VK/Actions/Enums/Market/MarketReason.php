@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Market;
 
-class MarketReason
+interface MarketReason
 {
 	public const ADULT_MATERIAL = 5;
 	public const CHILD_PORNOGRAPHY = 1;

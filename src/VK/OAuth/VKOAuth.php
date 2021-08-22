@@ -169,7 +169,7 @@ class VKOAuth
 	{
 		$decoded_body = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
 		
-		if ($decoded_body === null || !is_array($decoded_body))
+		if (!is_array($decoded_body))
 		{
 			$decoded_body = [];
 		}

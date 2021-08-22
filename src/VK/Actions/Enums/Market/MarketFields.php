@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Market;
 
-class MarketFields
+interface MarketFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

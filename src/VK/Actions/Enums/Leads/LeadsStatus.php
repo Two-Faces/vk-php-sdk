@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Leads;
 
-class LeadsStatus
+interface LeadsStatus
 {
 	public const BLOCKING_USERS = 2;
 	public const FINISH = 1;

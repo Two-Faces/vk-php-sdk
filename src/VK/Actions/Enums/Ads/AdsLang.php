@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Ads;
 
-class AdsLang
+interface AdsLang
 {
 	public const ENGLISH = 'en';
 	public const RUSSIAN = 'ru';

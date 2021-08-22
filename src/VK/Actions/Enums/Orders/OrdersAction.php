@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Orders;
 
-class OrdersAction
+interface OrdersAction
 {
 	public const CANCEL = 'cancel';
 	public const CHARGE = 'charge';

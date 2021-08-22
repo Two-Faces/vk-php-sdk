@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Users;
 
-class UsersFields
+interface UsersFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

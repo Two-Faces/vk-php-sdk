@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Accounts;
 
-class AccountRelation
+interface AccountRelation
 {
 	public const ACTIVELY_SEARCHING = 6;
 	public const COMPLICATED = 5;

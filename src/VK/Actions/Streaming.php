@@ -3,6 +3,7 @@
 namespace VK\Actions;
 
 use VK\Actions\Enums\Streaming\StreamingMonthlyTier;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
 
@@ -29,8 +30,8 @@ class Streaming extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function setSettings(string $access_token, array $params = [])
+	public function setSettings(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('streaming.setSettings', $access_token, $params);
+		return $this->request->post('streaming.setSettings', $access_token, $params, $apiTokenType);
 	}
 }

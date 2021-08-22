@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsNameCase
+interface GroupsNameCase
 {
 	public const ACCUSATIVE = 'acc';
 	public const DATIVE = 'dat';

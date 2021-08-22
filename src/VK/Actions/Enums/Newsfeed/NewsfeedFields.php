@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Newsfeed;
 
-class NewsfeedFields
+interface NewsfeedFields
 {
 	public const ABOUT = 'about';
 	public const ACTION_BUTTON = 'action_button';

@@ -5,6 +5,7 @@ namespace VK\Actions;
 use VK\Actions\Enums\Boards\BoardOrder;
 use VK\Actions\Enums\Boards\BoardPreview;
 use VK\Actions\Enums\Boards\BoardSort;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
 
@@ -24,9 +25,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function addTopic(string $access_token, array $params = [])
+	public function addTopic(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.addTopic', $access_token, $params);
+		return $this->request->post('board.addTopic', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -40,9 +41,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function closeTopic(string $access_token, array $params = [])
+	public function closeTopic(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.closeTopic', $access_token, $params);
+		return $this->request->post('board.closeTopic', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -61,9 +62,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function createComment(string $access_token, array $params = [])
+	public function createComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.createComment', $access_token, $params);
+		return $this->request->post('board.createComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -78,9 +79,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function deleteComment(string $access_token, array $params = [])
+	public function deleteComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.deleteComment', $access_token, $params);
+		return $this->request->post('board.deleteComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -94,9 +95,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function deleteTopic(string $access_token, array $params = [])
+	public function deleteTopic(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.deleteTopic', $access_token, $params);
+		return $this->request->post('board.deleteTopic', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -113,9 +114,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function editComment(string $access_token, array $params = [])
+	public function editComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.editComment', $access_token, $params);
+		return $this->request->post('board.editComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -130,9 +131,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function editTopic(string $access_token, array $params = [])
+	public function editTopic(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.editTopic', $access_token, $params);
+		return $this->request->post('board.editTopic', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -146,9 +147,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function fixTopic(string $access_token, array $params = [])
+	public function fixTopic(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.fixTopic', $access_token, $params);
+		return $this->request->post('board.fixTopic', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -168,9 +169,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getComments(string $access_token, array $params = [])
+	public function getComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.getComments', $access_token, $params);
+		return $this->request->post('board.getComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -190,9 +191,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getTopics(string $access_token, array $params = [])
+	public function getTopics(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.getTopics', $access_token, $params);
+		return $this->request->post('board.getTopics', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -206,9 +207,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function openTopic(string $access_token, array $params = [])
+	public function openTopic(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.openTopic', $access_token, $params);
+		return $this->request->post('board.openTopic', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -223,9 +224,9 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function restoreComment(string $access_token, array $params = [])
+	public function restoreComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.restoreComment', $access_token, $params);
+		return $this->request->post('board.restoreComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -239,8 +240,8 @@ class Board extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function unfixTopic(string $access_token, array $params = [])
+	public function unfixTopic(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('board.unfixTopic', $access_token, $params);
+		return $this->request->post('board.unfixTopic', $access_token, $params, $apiTokenType);
 	}
 }

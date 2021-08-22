@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Streaming;
 
-class StreamingMonthlyTier
+interface StreamingMonthlyTier
 {
 	public const TIER_1 = 'tier_1';
 	public const TIER_2 = 'tier_2';

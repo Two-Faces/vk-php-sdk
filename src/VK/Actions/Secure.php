@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiAccessMenuException;
 use VK\Exceptions\Api\VKApiAppsAlreadyUnlockedException;
 use VK\Exceptions\Api\VKApiInsufficientFundsException;
@@ -24,9 +25,9 @@ class Secure extends Action
 	 * @throws VKApiAppsAlreadyUnlockedException This achievement is already unlocked
 	 * @return mixed
 	 */
-	public function addAppEvent(string $access_token, array $params = [])
+	public function addAppEvent(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.addAppEvent', $access_token, $params);
+		return $this->request->post('secure.addAppEvent', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -40,9 +41,9 @@ class Secure extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function checkToken(string $access_token, array $params = [])
+	public function checkToken(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.checkToken', $access_token, $params);
+		return $this->request->post('secure.checkToken', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -71,9 +72,9 @@ class Secure extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getSMSHistory(string $access_token, array $params = [])
+	public function getSMSHistory(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.getSMSHistory', $access_token, $params);
+		return $this->request->post('secure.getSMSHistory', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -91,9 +92,9 @@ class Secure extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getTransactionsHistory(string $access_token, array $params = [])
+	public function getTransactionsHistory(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.getTransactionsHistory', $access_token, $params);
+		return $this->request->post('secure.getTransactionsHistory', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -106,9 +107,9 @@ class Secure extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getUserLevel(string $access_token, array $params = [])
+	public function getUserLevel(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.getUserLevel', $access_token, $params);
+		return $this->request->post('secure.getUserLevel', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -122,9 +123,9 @@ class Secure extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function giveEventSticker(string $access_token, array $params = [])
+	public function giveEventSticker(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.giveEventSticker', $access_token, $params);
+		return $this->request->post('secure.giveEventSticker', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -139,9 +140,9 @@ class Secure extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function sendNotification(string $access_token, array $params = [])
+	public function sendNotification(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.sendNotification', $access_token, $params);
+		return $this->request->post('secure.sendNotification', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -157,9 +158,9 @@ class Secure extends Action
 	 * @throws VKApiMobileNotActivatedException The mobile number of the user is unknown
 	 * @return mixed
 	 */
-	public function sendSMSNotification(string $access_token, array $params = [])
+	public function sendSMSNotification(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.sendSMSNotification', $access_token, $params);
+		return $this->request->post('secure.sendSMSNotification', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -176,8 +177,8 @@ class Secure extends Action
 	 * @throws VKApiAccessMenuException Access to the menu of the user denied
 	 * @return mixed
 	 */
-	public function setCounter(string $access_token, array $params = [])
+	public function setCounter(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('secure.setCounter', $access_token, $params);
+		return $this->request->post('secure.setCounter', $access_token, $params, $apiTokenType);
 	}
 }
