@@ -5,6 +5,7 @@ namespace VK\Actions;
 use VK\Actions\Enums\Wall\WallFilter;
 use VK\Actions\Enums\Wall\WallReason;
 use VK\Actions\Enums\Wall\WallSort;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiBlockedException;
 use VK\Exceptions\Api\VKApiWallAccessAddReplyException;
 use VK\Exceptions\Api\VKApiWallAccessCommentException;
@@ -30,9 +31,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function closeComments(string $access_token, array $params = [])
+	public function closeComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.closeComments', $access_token, $params);
+		return $this->request->post('wall.closeComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -56,9 +57,9 @@ class Wall extends Action
 	 * @throws VKApiWallAccessRepliesException Access to post comments denied
 	 * @return mixed
 	 */
-	public function createComment(string $access_token, array $params = [])
+	public function createComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.createComment', $access_token, $params);
+		return $this->request->post('wall.createComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -73,9 +74,9 @@ class Wall extends Action
 	 * @throws VKApiWallAccessPostException Access to wall's post denied
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.delete', $access_token, $params);
+		return $this->request->post('wall.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -90,9 +91,9 @@ class Wall extends Action
 	 * @throws VKApiWallAccessCommentException Access to wall's comment denied
 	 * @return mixed
 	 */
-	public function deleteComment(string $access_token, array $params = [])
+	public function deleteComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.deleteComment', $access_token, $params);
+		return $this->request->post('wall.deleteComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -121,9 +122,9 @@ class Wall extends Action
 	 * @throws VKApiWallAdsPostLimitReachedException Too many ads posts
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.edit', $access_token, $params);
+		return $this->request->post('wall.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -148,9 +149,9 @@ class Wall extends Action
 	 * @throws VKApiWallAdsPostLimitReachedException Too many ads posts
 	 * @return mixed
 	 */
-	public function editAdsStealth(string $access_token, array $params = [])
+	public function editAdsStealth(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.editAdsStealth', $access_token, $params);
+		return $this->request->post('wall.editAdsStealth', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -166,9 +167,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function editComment(string $access_token, array $params = [])
+	public function editComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.editComment', $access_token, $params);
+		return $this->request->post('wall.editComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -188,9 +189,9 @@ class Wall extends Action
 	 * @throws VKApiBlockedException Content blocked
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.get', $access_token, $params);
+		return $this->request->post('wall.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -206,9 +207,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.getById', $access_token, $params);
+		return $this->request->post('wall.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -233,9 +234,9 @@ class Wall extends Action
 	 * @throws VKApiWallAccessRepliesException Access to post comments denied
 	 * @return mixed
 	 */
-	public function getComments(string $access_token, array $params = [])
+	public function getComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.getComments', $access_token, $params);
+		return $this->request->post('wall.getComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -251,9 +252,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getReposts(string $access_token, array $params = [])
+	public function getReposts(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.getReposts', $access_token, $params);
+		return $this->request->post('wall.getReposts', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -265,9 +266,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function openComments(string $access_token, array $params = [])
+	public function openComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.openComments', $access_token, $params);
+		return $this->request->post('wall.openComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -281,9 +282,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function pin(string $access_token, array $params = [])
+	public function pin(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.pin', $access_token, $params);
+		return $this->request->post('wall.pin', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -316,9 +317,9 @@ class Wall extends Action
 	 * @throws VKApiWallAdsPostLimitReachedException Too many ads posts
 	 * @return mixed
 	 */
-	public function post(string $access_token, array $params = [])
+	public function post(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.post', $access_token, $params);
+		return $this->request->post('wall.post', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -346,9 +347,9 @@ class Wall extends Action
 	 * @throws VKApiWallLinksForbiddenException Hyperlinks are forbidden
 	 * @return mixed
 	 */
-	public function postAdsStealth(string $access_token, array $params = [])
+	public function postAdsStealth(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.postAdsStealth', $access_token, $params);
+		return $this->request->post('wall.postAdsStealth', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -363,9 +364,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function reportComment(string $access_token, array $params = [])
+	public function reportComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.reportComment', $access_token, $params);
+		return $this->request->post('wall.reportComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -380,9 +381,9 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function reportPost(string $access_token, array $params = [])
+	public function reportPost(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.reportPost', $access_token, $params);
+		return $this->request->post('wall.reportPost', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -402,9 +403,9 @@ class Wall extends Action
 	 * @throws VKApiWallAdsPostLimitReachedException Too many ads posts
 	 * @return mixed
 	 */
-	public function repost(string $access_token, array $params = [])
+	public function repost(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.repost', $access_token, $params);
+		return $this->request->post('wall.repost', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -420,9 +421,9 @@ class Wall extends Action
 	 * @throws VKApiWallAddPostException Access to adding post denied
 	 * @return mixed
 	 */
-	public function restore(string $access_token, array $params = [])
+	public function restore(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.restore', $access_token, $params);
+		return $this->request->post('wall.restore', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -437,9 +438,9 @@ class Wall extends Action
 	 * @throws VKApiWallAccessCommentException Access to wall's comment denied
 	 * @return mixed
 	 */
-	public function restoreComment(string $access_token, array $params = [])
+	public function restoreComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.restoreComment', $access_token, $params);
+		return $this->request->post('wall.restoreComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -460,9 +461,9 @@ class Wall extends Action
 	 * @throws VKApiWallAccessPostException Access to wall's post denied
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.search', $access_token, $params);
+		return $this->request->post('wall.search', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -476,8 +477,8 @@ class Wall extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function unpin(string $access_token, array $params = [])
+	public function unpin(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('wall.unpin', $access_token, $params);
+		return $this->request->post('wall.unpin', $access_token, $params, $apiTokenType);
 	}
 }

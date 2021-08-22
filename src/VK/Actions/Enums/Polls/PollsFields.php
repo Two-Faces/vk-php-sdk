@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Polls;
 
-class PollsFields
+interface PollsFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

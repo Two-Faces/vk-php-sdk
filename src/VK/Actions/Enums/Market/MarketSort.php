@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Market;
 
-class MarketSort
+interface MarketSort
 {
 	public const _0 = 0;
 	public const _1 = 1;

@@ -5,6 +5,7 @@ namespace VK\Actions;
 use VK\Actions\Enums\Friends\FriendsNameCase;
 use VK\Actions\Enums\Friends\FriendsOrder;
 use VK\Actions\Enums\Friends\FriendsSort;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiFriendsAddEnemyException;
 use VK\Exceptions\Api\VKApiFriendsAddInEnemyException;
 use VK\Exceptions\Api\VKApiFriendsAddNotFoundException;
@@ -32,9 +33,9 @@ class Friends extends Action
 	 * @throws VKApiFriendsAddNotFoundException Cannot add this user to friends as user not found
 	 * @return mixed
 	 */
-	public function add(string $access_token, array $params = [])
+	public function add(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.add', $access_token, $params);
+		return $this->request->post('friends.add', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -49,9 +50,9 @@ class Friends extends Action
 	 * @throws VKApiFriendsListLimitException Reached the maximum number of lists
 	 * @return mixed
 	 */
-	public function addList(string $access_token, array $params = [])
+	public function addList(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.addList', $access_token, $params);
+		return $this->request->post('friends.addList', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -65,9 +66,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function areFriends(string $access_token, array $params = [])
+	public function areFriends(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.areFriends', $access_token, $params);
+		return $this->request->post('friends.areFriends', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -80,9 +81,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.delete', $access_token, $params);
+		return $this->request->post('friends.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -109,9 +110,9 @@ class Friends extends Action
 	 * @throws VKApiFriendsListIdException Invalid list id
 	 * @return mixed
 	 */
-	public function deleteList(string $access_token, array $params = [])
+	public function deleteList(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.deleteList', $access_token, $params);
+		return $this->request->post('friends.deleteList', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -125,9 +126,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.edit', $access_token, $params);
+		return $this->request->post('friends.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -145,9 +146,9 @@ class Friends extends Action
 	 * @throws VKApiFriendsListIdException Invalid list id
 	 * @return mixed
 	 */
-	public function editList(string $access_token, array $params = [])
+	public function editList(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.editList', $access_token, $params);
+		return $this->request->post('friends.editList', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -167,9 +168,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.get', $access_token, $params);
+		return $this->request->post('friends.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -196,9 +197,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getByPhones(string $access_token, array $params = [])
+	public function getByPhones(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.getByPhones', $access_token, $params);
+		return $this->request->post('friends.getByPhones', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -212,9 +213,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getLists(string $access_token, array $params = [])
+	public function getLists(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.getLists', $access_token, $params);
+		return $this->request->post('friends.getLists', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -232,9 +233,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getMutual(string $access_token, array $params = [])
+	public function getMutual(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.getMutual', $access_token, $params);
+		return $this->request->post('friends.getMutual', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -252,9 +253,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getOnline(string $access_token, array $params = [])
+	public function getOnline(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.getOnline', $access_token, $params);
+		return $this->request->post('friends.getOnline', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -267,9 +268,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getRecent(string $access_token, array $params = [])
+	public function getRecent(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.getRecent', $access_token, $params);
+		return $this->request->post('friends.getRecent', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -291,9 +292,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getRequests(string $access_token, array $params = [])
+	public function getRequests(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.getRequests', $access_token, $params);
+		return $this->request->post('friends.getRequests', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -310,9 +311,9 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getSuggestions(string $access_token, array $params = [])
+	public function getSuggestions(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.getSuggestions', $access_token, $params);
+		return $this->request->post('friends.getSuggestions', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -330,8 +331,8 @@ class Friends extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('friends.search', $access_token, $params);
+		return $this->request->post('friends.search', $access_token, $params, $apiTokenType);
 	}
 }

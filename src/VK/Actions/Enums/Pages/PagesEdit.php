@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Pages;
 
-class PagesEdit
+interface PagesEdit
 {
 	public const ALL = 2;
 	public const MANAGERS = 0;

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Ads;
 
-class AdsPeriod
+interface AdsPeriod
 {
 	public const DAY = 'day';
 	public const MONTH = 'month';

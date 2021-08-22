@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Polls;
 
-class PollsBackgroundId
+interface PollsBackgroundId
 {
 	public const _0 = 0;
 	public const _1 = 1;

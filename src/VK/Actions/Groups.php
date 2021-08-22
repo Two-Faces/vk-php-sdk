@@ -20,6 +20,7 @@ use VK\Actions\Enums\Groups\GroupTopics;
 use VK\Actions\Enums\Groups\GroupVideo;
 use VK\Actions\Enums\Groups\GroupWall;
 use VK\Actions\Enums\Groups\GroupWiki;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiAccessGroupsException;
 use VK\Exceptions\Api\VKApiCallbackApiServersLimitException;
 use VK\Exceptions\Api\VKApiCommunitiesCatalogDisabledException;
@@ -62,9 +63,9 @@ class Groups extends Action
 	 * @throws VKApiGroupTooManyAddressesException Too many addresses in club
 	 * @return mixed
 	 */
-	public function addAddress(string $access_token, array $params = [])
+	public function addAddress(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.addAddress', $access_token, $params);
+		return $this->request->post('groups.addAddress', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -79,9 +80,9 @@ class Groups extends Action
 	 * @throws VKApiCallbackApiServersLimitException Servers number limit is reached
 	 * @return mixed
 	 */
-	public function addCallbackServer(string $access_token, array $params = [])
+	public function addCallbackServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.addCallbackServer', $access_token, $params);
+		return $this->request->post('groups.addCallbackServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -96,9 +97,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function addLink(string $access_token, array $params = [])
+	public function addLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.addLink', $access_token, $params);
+		return $this->request->post('groups.addLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -113,9 +114,9 @@ class Groups extends Action
 	 * @throws VKApiLimitsException Out of limits
 	 * @return mixed
 	 */
-	public function approveRequest(string $access_token, array $params = [])
+	public function approveRequest(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.approveRequest', $access_token, $params);
+		return $this->request->post('groups.approveRequest', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -131,9 +132,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function ban(string $access_token, array $params = [])
+	public function ban(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.ban', $access_token, $params);
+		return $this->request->post('groups.ban', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -151,9 +152,9 @@ class Groups extends Action
 	 * @throws VKApiLimitsException Out of limits
 	 * @return mixed
 	 */
-	public function create(string $access_token, array $params = [])
+	public function create(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.create', $access_token, $params);
+		return $this->request->post('groups.create', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -166,9 +167,9 @@ class Groups extends Action
 	 * @throws VKApiNotFoundException Not found
 	 * @return mixed
 	 */
-	public function deleteCallbackServer(string $access_token, array $params = [])
+	public function deleteCallbackServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.deleteCallbackServer', $access_token, $params);
+		return $this->request->post('groups.deleteCallbackServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -182,9 +183,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function deleteLink(string $access_token, array $params = [])
+	public function deleteLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.deleteLink', $access_token, $params);
+		return $this->request->post('groups.deleteLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -195,9 +196,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function disableOnline(string $access_token, array $params = [])
+	public function disableOnline(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.disableOnline', $access_token, $params);
+		return $this->request->post('groups.disableOnline', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -255,9 +256,9 @@ class Groups extends Action
 	 * @throws VKApiInvalidAddressException Invalid screen name
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.edit', $access_token, $params);
+		return $this->request->post('groups.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -284,9 +285,9 @@ class Groups extends Action
 	 * @throws VKApiGroupTooManyAddressesException Too many addresses in club
 	 * @return mixed
 	 */
-	public function editAddress(string $access_token, array $params = [])
+	public function editAddress(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.editAddress', $access_token, $params);
+		return $this->request->post('groups.editAddress', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -302,9 +303,9 @@ class Groups extends Action
 	 * @throws VKApiNotFoundException Not found
 	 * @return mixed
 	 */
-	public function editCallbackServer(string $access_token, array $params = [])
+	public function editCallbackServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.editCallbackServer', $access_token, $params);
+		return $this->request->post('groups.editCallbackServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -319,9 +320,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function editLink(string $access_token, array $params = [])
+	public function editLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.editLink', $access_token, $params);
+		return $this->request->post('groups.editLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -345,9 +346,9 @@ class Groups extends Action
 	 * @throws VKApiGroupHostNeed2faException User needs to enable 2FA for this action
 	 * @return mixed
 	 */
-	public function editManager(string $access_token, array $params = [])
+	public function editManager(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.editManager', $access_token, $params);
+		return $this->request->post('groups.editManager', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -358,9 +359,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function enableOnline(string $access_token, array $params = [])
+	public function enableOnline(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.enableOnline', $access_token, $params);
+		return $this->request->post('groups.enableOnline', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -379,9 +380,9 @@ class Groups extends Action
 	 * @throws VKApiAccessGroupsException Access to the groups list is denied due to the user's privacy settings
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.get', $access_token, $params);
+		return $this->request->post('groups.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -401,9 +402,9 @@ class Groups extends Action
 	 * @throws VKApiParamGroupIdException Invalid group id
 	 * @return mixed
 	 */
-	public function getAddresses(string $access_token, array $params = [])
+	public function getAddresses(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getAddresses', $access_token, $params);
+		return $this->request->post('groups.getAddresses', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -421,9 +422,9 @@ class Groups extends Action
 	 * @throws VKApiNotFoundException Not found
 	 * @return mixed
 	 */
-	public function getBanned(string $access_token, array $params = [])
+	public function getBanned(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getBanned', $access_token, $params);
+		return $this->request->post('groups.getBanned', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -438,9 +439,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getById', $access_token, $params);
+		return $this->request->post('groups.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -453,9 +454,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCallbackConfirmationCode(string $access_token, array $params = [])
+	public function getCallbackConfirmationCode(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getCallbackConfirmationCode', $access_token, $params);
+		return $this->request->post('groups.getCallbackConfirmationCode', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -467,9 +468,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCallbackServers(string $access_token, array $params = [])
+	public function getCallbackServers(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getCallbackServers', $access_token, $params);
+		return $this->request->post('groups.getCallbackServers', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -484,9 +485,9 @@ class Groups extends Action
 	 * @throws VKApiNotFoundException Not found
 	 * @return mixed
 	 */
-	public function getCallbackSettings(string $access_token, array $params = [])
+	public function getCallbackSettings(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getCallbackSettings', $access_token, $params);
+		return $this->request->post('groups.getCallbackSettings', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -502,9 +503,9 @@ class Groups extends Action
 	 * @throws VKApiCommunitiesCategoriesDisabledException Catalog categories are not available for this user
 	 * @return mixed
 	 */
-	public function getCatalog(string $access_token, array $params = [])
+	public function getCatalog(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getCatalog', $access_token, $params);
+		return $this->request->post('groups.getCatalog', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -518,9 +519,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCatalogInfo(string $access_token, array $params = [])
+	public function getCatalogInfo(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getCatalogInfo', $access_token, $params);
+		return $this->request->post('groups.getCatalogInfo', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -537,9 +538,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getInvitedUsers(string $access_token, array $params = [])
+	public function getInvitedUsers(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getInvitedUsers', $access_token, $params);
+		return $this->request->post('groups.getInvitedUsers', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -554,9 +555,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getInvites(string $access_token, array $params = [])
+	public function getInvites(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getInvites', $access_token, $params);
+		return $this->request->post('groups.getInvites', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -569,9 +570,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getLongPollServer(string $access_token, array $params = [])
+	public function getLongPollServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getLongPollServer', $access_token, $params);
+		return $this->request->post('groups.getLongPollServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -584,9 +585,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getLongPollSettings(string $access_token, array $params = [])
+	public function getLongPollSettings(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getLongPollSettings', $access_token, $params);
+		return $this->request->post('groups.getLongPollSettings', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -605,9 +606,9 @@ class Groups extends Action
 	 * @throws VKApiParamGroupIdException Invalid group id
 	 * @return mixed
 	 */
-	public function getMembers(string $access_token, array $params = [])
+	public function getMembers(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getMembers', $access_token, $params);
+		return $this->request->post('groups.getMembers', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -623,9 +624,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getRequests(string $access_token, array $params = [])
+	public function getRequests(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getRequests', $access_token, $params);
+		return $this->request->post('groups.getRequests', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -638,9 +639,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getSettings(string $access_token, array $params = [])
+	public function getSettings(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.getSettings', $access_token, $params);
+		return $this->request->post('groups.getSettings', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -666,9 +667,9 @@ class Groups extends Action
 	 * @throws VKApiLimitsException Out of limits
 	 * @return mixed
 	 */
-	public function invite(string $access_token, array $params = [])
+	public function invite(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.invite', $access_token, $params);
+		return $this->request->post('groups.invite', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -684,9 +685,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function isMember(string $access_token, array $params = [])
+	public function isMember(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.isMember', $access_token, $params);
+		return $this->request->post('groups.isMember', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -701,9 +702,9 @@ class Groups extends Action
 	 * @throws VKApiLimitsException Out of limits
 	 * @return mixed
 	 */
-	public function join(string $access_token, array $params = [])
+	public function join(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.join', $access_token, $params);
+		return $this->request->post('groups.join', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -716,9 +717,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function leave(string $access_token, array $params = [])
+	public function leave(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.leave', $access_token, $params);
+		return $this->request->post('groups.leave', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -732,9 +733,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function removeUser(string $access_token, array $params = [])
+	public function removeUser(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.removeUser', $access_token, $params);
+		return $this->request->post('groups.removeUser', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -749,9 +750,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function reorderLink(string $access_token, array $params = [])
+	public function reorderLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.reorderLink', $access_token, $params);
+		return $this->request->post('groups.reorderLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -772,9 +773,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.search', $access_token, $params);
+		return $this->request->post('groups.search', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -830,9 +831,9 @@ class Groups extends Action
 	 * @throws VKApiNotFoundException Not found
 	 * @return mixed
 	 */
-	public function setCallbackSettings(string $access_token, array $params = [])
+	public function setCallbackSettings(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.setCallbackSettings', $access_token, $params);
+		return $this->request->post('groups.setCallbackSettings', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -886,9 +887,9 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function setLongPollSettings(string $access_token, array $params = [])
+	public function setLongPollSettings(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.setLongPollSettings', $access_token, $params);
+		return $this->request->post('groups.setLongPollSettings', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -900,8 +901,8 @@ class Groups extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function unban(string $access_token, array $params = [])
+	public function unban(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('groups.unban', $access_token, $params);
+		return $this->request->post('groups.unban', $access_token, $params, $apiTokenType);
 	}
 }

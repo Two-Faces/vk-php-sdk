@@ -2,7 +2,7 @@
 
 namespace VK\Client\Enums;
 
-class VKLanguage
+interface VKLanguage
 {
 	public const RUSSIAN = 'ru';
 	public const UKRAINIAN = 'ua';

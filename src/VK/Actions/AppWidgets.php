@@ -3,6 +3,7 @@
 namespace VK\Actions;
 
 use VK\Actions\Enums\AppWidgets\AppWidgetsType;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiBlockedException;
 use VK\Exceptions\Api\VKApiCompileException;
 use VK\Exceptions\Api\VKApiParamGroupIdException;
@@ -31,8 +32,8 @@ class AppWidgets extends Action
 	 * @throws VKApiParamGroupIdException Invalid group id
 	 * @return mixed
 	 */
-	public function update(string $access_token, array $params = [])
+	public function update(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('appWidgets.update', $access_token, $params);
+		return $this->request->post('appWidgets.update', $access_token, $params, $apiTokenType);
 	}
 }

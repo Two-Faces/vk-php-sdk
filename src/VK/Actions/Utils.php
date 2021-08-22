@@ -4,6 +4,7 @@ namespace VK\Actions;
 
 use VK\Actions\Enums\Utils\UtilsInterval;
 use VK\Actions\Enums\Utils\UtilsSource;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiNotFoundException;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
@@ -20,9 +21,9 @@ class Utils extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function checkLink(string $access_token, array $params = [])
+	public function checkLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('utils.checkLink', $access_token, $params);
+		return $this->request->post('utils.checkLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -35,9 +36,9 @@ class Utils extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function deleteFromLastShortened(string $access_token, array $params = [])
+	public function deleteFromLastShortened(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('utils.deleteFromLastShortened', $access_token, $params);
+		return $this->request->post('utils.deleteFromLastShortened', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -51,9 +52,9 @@ class Utils extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getLastShortenedLinks(string $access_token, array $params = [])
+	public function getLastShortenedLinks(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('utils.getLastShortenedLinks', $access_token, $params);
+		return $this->request->post('utils.getLastShortenedLinks', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -72,9 +73,9 @@ class Utils extends Action
 	 * @throws VKApiNotFoundException Not found
 	 * @return mixed
 	 */
-	public function getLinkStats(string $access_token, array $params = [])
+	public function getLinkStats(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('utils.getLinkStats', $access_token, $params);
+		return $this->request->post('utils.getLinkStats', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -101,9 +102,9 @@ class Utils extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getShortLink(string $access_token, array $params = [])
+	public function getShortLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('utils.getShortLink', $access_token, $params);
+		return $this->request->post('utils.getShortLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -116,8 +117,8 @@ class Utils extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function resolveScreenName(string $access_token, array $params = [])
+	public function resolveScreenName(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('utils.resolveScreenName', $access_token, $params);
+		return $this->request->post('utils.resolveScreenName', $access_token, $params, $apiTokenType);
 	}
 }

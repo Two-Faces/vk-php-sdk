@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsSubject
+interface GroupsSubject
 {
 	public const ACTIVITY_HOLIDAYS = 2;
 	public const ART_AND_CULTURE = 12;

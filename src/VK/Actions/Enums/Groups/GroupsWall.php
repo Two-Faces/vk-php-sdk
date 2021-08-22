@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsWall
+interface GroupsWall
 {
 	public const CLOSED = 3;
 	public const DISABLED = 0;

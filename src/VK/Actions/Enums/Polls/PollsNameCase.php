@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Polls;
 
-class PollsNameCase
+interface PollsNameCase
 {
 	public const ACCUSATIVE = 'acc';
 	public const DATIVE = 'dat';

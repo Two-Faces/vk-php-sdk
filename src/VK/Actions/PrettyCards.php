@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiPrettyCardsCardIsConnectedToPostException;
 use VK\Exceptions\Api\VKApiPrettyCardsCardNotFoundException;
 use VK\Exceptions\Api\VKApiPrettyCardsTooManyCardsException;
@@ -25,9 +26,9 @@ class PrettyCards extends Action
 	 * @throws VKApiPrettyCardsTooManyCardsException Too many cards
 	 * @return mixed
 	 */
-	public function create(string $access_token, array $params = [])
+	public function create(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('prettyCards.create', $access_token, $params);
+		return $this->request->post('prettyCards.create', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -41,9 +42,9 @@ class PrettyCards extends Action
 	 * @throws VKApiPrettyCardsCardIsConnectedToPostException Card is connected to post
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('prettyCards.delete', $access_token, $params);
+		return $this->request->post('prettyCards.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -62,9 +63,9 @@ class PrettyCards extends Action
 	 * @throws VKApiPrettyCardsCardNotFoundException Card not found
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('prettyCards.edit', $access_token, $params);
+		return $this->request->post('prettyCards.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -77,9 +78,9 @@ class PrettyCards extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('prettyCards.get', $access_token, $params);
+		return $this->request->post('prettyCards.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -91,9 +92,9 @@ class PrettyCards extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('prettyCards.getById', $access_token, $params);
+		return $this->request->post('prettyCards.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**

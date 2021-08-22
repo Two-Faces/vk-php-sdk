@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Photos;
 
-class PhotosFields
+interface PhotosFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

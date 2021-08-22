@@ -3,6 +3,7 @@
 namespace VK\Actions;
 
 use VK\Actions\Enums\Orders\OrdersAction;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiActionFailedException;
 use VK\Exceptions\Api\VKApiAppsSubscriptionInvalidStatusException;
 use VK\Exceptions\Api\VKApiAppsSubscriptionNotFoundException;
@@ -24,9 +25,9 @@ class Orders extends Action
 	 * @throws VKApiAppsSubscriptionInvalidStatusException Subscription is in invalid status
 	 * @return mixed
 	 */
-	public function cancelSubscription(string $access_token, array $params = [])
+	public function cancelSubscription(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.cancelSubscription', $access_token, $params);
+		return $this->request->post('orders.cancelSubscription', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -44,9 +45,9 @@ class Orders extends Action
 	 * @throws VKApiActionFailedException Unable to process action
 	 * @return mixed
 	 */
-	public function changeState(string $access_token, array $params = [])
+	public function changeState(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.changeState', $access_token, $params);
+		return $this->request->post('orders.changeState', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -61,9 +62,9 @@ class Orders extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.get', $access_token, $params);
+		return $this->request->post('orders.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -75,9 +76,9 @@ class Orders extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getAmount(string $access_token, array $params = [])
+	public function getAmount(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.getAmount', $access_token, $params);
+		return $this->request->post('orders.getAmount', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -92,9 +93,9 @@ class Orders extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.getById', $access_token, $params);
+		return $this->request->post('orders.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -107,9 +108,9 @@ class Orders extends Action
 	 * @throws VKApiAppsSubscriptionNotFoundException Subscription not found
 	 * @return mixed
 	 */
-	public function getUserSubscriptionById(string $access_token, array $params = [])
+	public function getUserSubscriptionById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.getUserSubscriptionById', $access_token, $params);
+		return $this->request->post('orders.getUserSubscriptionById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -120,9 +121,9 @@ class Orders extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getUserSubscriptions(string $access_token, array $params = [])
+	public function getUserSubscriptions(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.getUserSubscriptions', $access_token, $params);
+		return $this->request->post('orders.getUserSubscriptions', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -137,8 +138,8 @@ class Orders extends Action
 	 * @throws VKApiAppsSubscriptionInvalidStatusException Subscription is in invalid status
 	 * @return mixed
 	 */
-	public function updateSubscription(string $access_token, array $params = [])
+	public function updateSubscription(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('orders.updateSubscription', $access_token, $params);
+		return $this->request->post('orders.updateSubscription', $access_token, $params, $apiTokenType);
 	}
 }

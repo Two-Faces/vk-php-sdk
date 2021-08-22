@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Newsfeed;
 
-class NewsfeedNameCase
+interface NewsfeedNameCase
 {
 	public const ACCUSATIVE = 'acc';
 	public const DATIVE = 'dat';

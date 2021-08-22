@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
 
@@ -19,9 +20,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getChairs(string $access_token, array $params = [])
+	public function getChairs(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getChairs', $access_token, $params);
+		return $this->request->post('database.getChairs', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -39,9 +40,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCities(string $access_token, array $params = [])
+	public function getCities(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getCities', $access_token, $params);
+		return $this->request->post('database.getCities', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -54,9 +55,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCitiesById(string $access_token, array $params = [])
+	public function getCitiesById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getCitiesById', $access_token, $params);
+		return $this->request->post('database.getCitiesById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -72,9 +73,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCountries(string $access_token, array $params = [])
+	public function getCountries(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getCountries', $access_token, $params);
+		return $this->request->post('database.getCountries', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -87,9 +88,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCountriesById(string $access_token, array $params = [])
+	public function getCountriesById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getCountriesById', $access_token, $params);
+		return $this->request->post('database.getCountriesById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -104,9 +105,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getFaculties(string $access_token, array $params = [])
+	public function getFaculties(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getFaculties', $access_token, $params);
+		return $this->request->post('database.getFaculties', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -122,9 +123,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getMetroStations(string $access_token, array $params = [])
+	public function getMetroStations(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getMetroStations', $access_token, $params);
+		return $this->request->post('database.getMetroStations', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -137,9 +138,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getMetroStationsById(string $access_token, array $params = [])
+	public function getMetroStationsById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getMetroStationsById', $access_token, $params);
+		return $this->request->post('database.getMetroStationsById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -155,9 +156,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getRegions(string $access_token, array $params = [])
+	public function getRegions(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getRegions', $access_token, $params);
+		return $this->request->post('database.getRegions', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -170,9 +171,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getSchoolClasses(string $access_token, array $params = [])
+	public function getSchoolClasses(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getSchoolClasses', $access_token, $params);
+		return $this->request->post('database.getSchoolClasses', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -188,9 +189,9 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getSchools(string $access_token, array $params = [])
+	public function getSchools(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getSchools', $access_token, $params);
+		return $this->request->post('database.getSchools', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -207,8 +208,8 @@ class Database extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getUniversities(string $access_token, array $params = [])
+	public function getUniversities(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('database.getUniversities', $access_token, $params);
+		return $this->request->post('database.getUniversities', $access_token, $params, $apiTokenType);
 	}
 }

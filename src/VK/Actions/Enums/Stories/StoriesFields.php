@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Stories;
 
-class StoriesFields
+interface StoriesFields
 {
 	public const ABOUT = 'about';
 	public const ACTION_BUTTON = 'action_button';

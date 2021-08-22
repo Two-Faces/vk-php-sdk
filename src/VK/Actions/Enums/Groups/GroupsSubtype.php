@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsSubtype
+interface GroupsSubtype
 {
 	public const COMPANY_OR_WEBSITE = 2;
 	public const PERSON_OR_GROUP = 3;

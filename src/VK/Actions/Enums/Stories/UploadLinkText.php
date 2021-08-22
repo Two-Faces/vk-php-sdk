@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Stories;
 
-class UploadLinkText
+interface UploadLinkText
 {
 	public const BOOK = 'book';
 	public const BUY = 'buy';

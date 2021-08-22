@@ -3,6 +3,7 @@
 namespace VK\Actions;
 
 use VK\Actions\Enums\Leads\LeadsStatus;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiActionFailedException;
 use VK\Exceptions\Api\VKApiLimitsException;
 use VK\Exceptions\Api\VKApiVotesException;
@@ -27,9 +28,9 @@ class Leads extends Action
 	 * @throws VKApiActionFailedException Unable to process action
 	 * @return mixed
 	 */
-	public function checkUser(string $access_token, array $params = [])
+	public function checkUser(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('leads.checkUser', $access_token, $params);
+		return $this->request->post('leads.checkUser', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -46,9 +47,9 @@ class Leads extends Action
 	 * @throws VKApiVotesException Not enough votes
 	 * @return mixed
 	 */
-	public function complete(string $access_token, array $params = [])
+	public function complete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('leads.complete', $access_token, $params);
+		return $this->request->post('leads.complete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -64,9 +65,9 @@ class Leads extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getStats(string $access_token, array $params = [])
+	public function getStats(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('leads.getStats', $access_token, $params);
+		return $this->request->post('leads.getStats', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -84,9 +85,9 @@ class Leads extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getUsers(string $access_token, array $params = [])
+	public function getUsers(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('leads.getUsers', $access_token, $params);
+		return $this->request->post('leads.getUsers', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -99,9 +100,9 @@ class Leads extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function metricHit(string $access_token, array $params = [])
+	public function metricHit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('leads.metricHit', $access_token, $params);
+		return $this->request->post('leads.metricHit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -120,8 +121,8 @@ class Leads extends Action
 	 * @throws VKApiLimitsException Out of limits
 	 * @return mixed
 	 */
-	public function start(string $access_token, array $params = [])
+	public function start(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('leads.start', $access_token, $params);
+		return $this->request->post('leads.start', $access_token, $params, $apiTokenType);
 	}
 }

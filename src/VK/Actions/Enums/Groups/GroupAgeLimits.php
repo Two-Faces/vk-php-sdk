@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupAgeLimits
+interface GroupAgeLimits
 {
 	public const _16_PLUS = 2;
 	public const _18_PLUS = 3;

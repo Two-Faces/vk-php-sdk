@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Likes;
 
-class LikesType
+interface LikesType
 {
 	public const AUDIO = 'audio';
 	public const COMMENT = 'comment';

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Fave;
 
-class FaveFields
+interface FaveFields
 {
 	public const ABOUT = 'about';
 	public const ACTION_BUTTON = 'action_button';

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Accounts;
 
-class AccountFields
+interface AccountFields
 {
 	public const COUNTRY = 'country';
 	public const HTTPS_REQUIRED = 'https_required';

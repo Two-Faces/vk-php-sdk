@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Apps;
 
-class AppsPlatform
+interface AppsPlatform
 {
 	public const ANDROID = 'android';
 	public const IOS = 'ios';

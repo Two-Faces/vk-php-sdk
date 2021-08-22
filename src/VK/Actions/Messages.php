@@ -5,6 +5,7 @@ namespace VK\Actions;
 use VK\Actions\Enums\Messages\MessagesFilter;
 use VK\Actions\Enums\Messages\MessagesMediaType;
 use VK\Actions\Enums\Messages\MessagesRev;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiLimitsException;
 use VK\Exceptions\Api\VKApiMessagesCantChangeInviteLinkException;
 use VK\Exceptions\Api\VKApiMessagesCantDeleteForAllException;
@@ -53,9 +54,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @return mixed
 	 */
-	public function addChatUser(string $access_token, array $params = [])
+	public function addChatUser(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.addChatUser', $access_token, $params);
+		return $this->request->post('messages.addChatUser', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -69,9 +70,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function allowMessagesFromGroup(string $access_token, array $params = [])
+	public function allowMessagesFromGroup(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.allowMessagesFromGroup', $access_token, $params);
+		return $this->request->post('messages.allowMessagesFromGroup', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -86,9 +87,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @return mixed
 	 */
-	public function createChat(string $access_token, array $params = [])
+	public function createChat(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.createChat', $access_token, $params);
+		return $this->request->post('messages.createChat', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -105,9 +106,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesCantDeleteForAllException Can't delete this message for everybody
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.delete', $access_token, $params);
+		return $this->request->post('messages.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -122,9 +123,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesChatNotAdminException You are not admin of this chat
 	 * @return mixed
 	 */
-	public function deleteChatPhoto(string $access_token, array $params = [])
+	public function deleteChatPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.deleteChatPhoto', $access_token, $params);
+		return $this->request->post('messages.deleteChatPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -140,9 +141,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @return mixed
 	 */
-	public function deleteConversation(string $access_token, array $params = [])
+	public function deleteConversation(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.deleteConversation', $access_token, $params);
+		return $this->request->post('messages.deleteConversation', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -155,9 +156,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function denyMessagesFromGroup(string $access_token, array $params = [])
+	public function denyMessagesFromGroup(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.denyMessagesFromGroup', $access_token, $params);
+		return $this->request->post('messages.denyMessagesFromGroup', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -187,9 +188,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesTooManyPostsException Too many posts in messages
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.edit', $access_token, $params);
+		return $this->request->post('messages.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -204,9 +205,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesChatNotAdminException You are not admin of this chat
 	 * @return mixed
 	 */
-	public function editChat(string $access_token, array $params = [])
+	public function editChat(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.editChat', $access_token, $params);
+		return $this->request->post('messages.editChat', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -223,9 +224,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getByConversationMessageId(string $access_token, array $params = [])
+	public function getByConversationMessageId(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getByConversationMessageId', $access_token, $params);
+		return $this->request->post('messages.getByConversationMessageId', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -242,9 +243,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getById', $access_token, $params);
+		return $this->request->post('messages.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -258,9 +259,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesChatUserNoAccessException You don't have access to this chat
 	 * @return mixed
 	 */
-	public function getChatPreview(string $access_token, array $params = [])
+	public function getChatPreview(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getChatPreview', $access_token, $params);
+		return $this->request->post('messages.getChatPreview', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -276,9 +277,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesChatUserNoAccessException You don't have access to this chat
 	 * @return mixed
 	 */
-	public function getConversationMembers(string $access_token, array $params = [])
+	public function getConversationMembers(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getConversationMembers', $access_token, $params);
+		return $this->request->post('messages.getConversationMembers', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -299,9 +300,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesChatUserNoAccessException You don't have access to this chat
 	 * @return mixed
 	 */
-	public function getConversations(string $access_token, array $params = [])
+	public function getConversations(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getConversations', $access_token, $params);
+		return $this->request->post('messages.getConversations', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -320,9 +321,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @return mixed
 	 */
-	public function getConversationsById(string $access_token, array $params = [])
+	public function getConversationsById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getConversationsById', $access_token, $params);
+		return $this->request->post('messages.getConversationsById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -344,9 +345,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @return mixed
 	 */
-	public function getHistory(string $access_token, array $params = [])
+	public function getHistory(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getHistory', $access_token, $params);
+		return $this->request->post('messages.getHistory', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -367,9 +368,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getHistoryAttachments(string $access_token, array $params = [])
+	public function getHistoryAttachments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getHistoryAttachments', $access_token, $params);
+		return $this->request->post('messages.getHistoryAttachments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -384,9 +385,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesCantChangeInviteLinkException You can't change invite link for this chat
 	 * @return mixed
 	 */
-	public function getInviteLink(string $access_token, array $params = [])
+	public function getInviteLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getInviteLink', $access_token, $params);
+		return $this->request->post('messages.getInviteLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -399,9 +400,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getLastActivity(string $access_token, array $params = [])
+	public function getLastActivity(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getLastActivity', $access_token, $params);
+		return $this->request->post('messages.getLastActivity', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -427,9 +428,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesTooNewPtsException Value of ts or pts is too new
 	 * @return mixed
 	 */
-	public function getLongPollHistory(string $access_token, array $params = [])
+	public function getLongPollHistory(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getLongPollHistory', $access_token, $params);
+		return $this->request->post('messages.getLongPollHistory', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -444,9 +445,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getLongPollServer(string $access_token, array $params = [])
+	public function getLongPollServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.getLongPollServer', $access_token, $params);
+		return $this->request->post('messages.getLongPollServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -460,9 +461,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function isMessagesFromGroupAllowed(string $access_token, array $params = [])
+	public function isMessagesFromGroupAllowed(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.isMessagesFromGroupAllowed', $access_token, $params);
+		return $this->request->post('messages.isMessagesFromGroupAllowed', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -475,9 +476,9 @@ class Messages extends Action
 	 * @throws VKApiLimitsException Out of limits
 	 * @return mixed
 	 */
-	public function joinChatByInviteLink(string $access_token, array $params = [])
+	public function joinChatByInviteLink(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.joinChatByInviteLink', $access_token, $params);
+		return $this->request->post('messages.joinChatByInviteLink', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -492,9 +493,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function markAsAnsweredConversation(string $access_token, array $params = [])
+	public function markAsAnsweredConversation(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.markAsAnsweredConversation', $access_token, $params);
+		return $this->request->post('messages.markAsAnsweredConversation', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -508,9 +509,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function markAsImportant(string $access_token, array $params = [])
+	public function markAsImportant(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.markAsImportant', $access_token, $params);
+		return $this->request->post('messages.markAsImportant', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -525,9 +526,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function markAsImportantConversation(string $access_token, array $params = [])
+	public function markAsImportantConversation(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.markAsImportantConversation', $access_token, $params);
+		return $this->request->post('messages.markAsImportantConversation', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -543,9 +544,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function markAsRead(string $access_token, array $params = [])
+	public function markAsRead(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.markAsRead', $access_token, $params);
+		return $this->request->post('messages.markAsRead', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -561,9 +562,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesCantPinOneTimeStoryException Cannot pin one-time story
 	 * @return mixed
 	 */
-	public function pin(string $access_token, array $params = [])
+	public function pin(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.pin', $access_token, $params);
+		return $this->request->post('messages.pin', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -581,9 +582,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @return mixed
 	 */
-	public function removeChatUser(string $access_token, array $params = [])
+	public function removeChatUser(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.removeChatUser', $access_token, $params);
+		return $this->request->post('messages.removeChatUser', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -597,9 +598,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function restore(string $access_token, array $params = [])
+	public function restore(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.restore', $access_token, $params);
+		return $this->request->post('messages.restore', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -620,9 +621,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.search', $access_token, $params);
+		return $this->request->post('messages.search', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -639,9 +640,9 @@ class Messages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function searchConversations(string $access_token, array $params = [])
+	public function searchConversations(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.searchConversations', $access_token, $params);
+		return $this->request->post('messages.searchConversations', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -683,9 +684,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesTooManyPostsException Too many posts in messages
 	 * @return mixed
 	 */
-	public function send(string $access_token, array $params = [])
+	public function send(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.send', $access_token, $params);
+		return $this->request->post('messages.send', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -704,9 +705,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @return mixed
 	 */
-	public function setActivity(string $access_token, array $params = [])
+	public function setActivity(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.setActivity', $access_token, $params);
+		return $this->request->post('messages.setActivity', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -722,9 +723,9 @@ class Messages extends Action
 	 * @throws VKApiMessagesChatNotAdminException You are not admin of this chat
 	 * @return mixed
 	 */
-	public function setChatPhoto(string $access_token, array $params = [])
+	public function setChatPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.setChatPhoto', $access_token, $params);
+		return $this->request->post('messages.setChatPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -737,8 +738,8 @@ class Messages extends Action
 	 * @throws VKApiMessagesChatNotAdminException You are not admin of this chat
 	 * @return mixed
 	 */
-	public function unpin(string $access_token, array $params = [])
+	public function unpin(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('messages.unpin', $access_token, $params);
+		return $this->request->post('messages.unpin', $access_token, $params, $apiTokenType);
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsVideo
+interface GroupsVideo
 {
 	public const DISABLED = 0;
 	public const LIMITED = 2;

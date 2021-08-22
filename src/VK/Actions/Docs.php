@@ -3,6 +3,7 @@
 namespace VK\Actions;
 
 use VK\Actions\Enums\Docs\DocsType;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiMessagesDenySendException;
 use VK\Exceptions\Api\VKApiParamDocAccessException;
 use VK\Exceptions\Api\VKApiParamDocDeleteAccessException;
@@ -26,9 +27,9 @@ class Docs extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function add(string $access_token, array $params = [])
+	public function add(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.add', $access_token, $params);
+		return $this->request->post('docs.add', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -44,9 +45,9 @@ class Docs extends Action
 	 * @throws VKApiParamDocIdException Invalid document id
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.delete', $access_token, $params);
+		return $this->request->post('docs.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -65,9 +66,9 @@ class Docs extends Action
 	 * @throws VKApiParamDocTitleException Invalid document title
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.edit', $access_token, $params);
+		return $this->request->post('docs.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -83,9 +84,9 @@ class Docs extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.get', $access_token, $params);
+		return $this->request->post('docs.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -98,9 +99,9 @@ class Docs extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.getById', $access_token, $params);
+		return $this->request->post('docs.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -115,9 +116,9 @@ class Docs extends Action
 	 * @throws VKApiMessagesDenySendException Can't send messages for users without permission
 	 * @return mixed
 	 */
-	public function getMessagesUploadServer(string $access_token, array $params = [])
+	public function getMessagesUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.getMessagesUploadServer', $access_token, $params);
+		return $this->request->post('docs.getMessagesUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -130,9 +131,9 @@ class Docs extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getTypes(string $access_token, array $params = [])
+	public function getTypes(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.getTypes', $access_token, $params);
+		return $this->request->post('docs.getTypes', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -145,9 +146,9 @@ class Docs extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getUploadServer(string $access_token, array $params = [])
+	public function getUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.getUploadServer', $access_token, $params);
+		return $this->request->post('docs.getUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -160,9 +161,9 @@ class Docs extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getWallUploadServer(string $access_token, array $params = [])
+	public function getWallUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.getWallUploadServer', $access_token, $params);
+		return $this->request->post('docs.getWallUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -178,9 +179,9 @@ class Docs extends Action
 	 * @throws VKApiSaveFileException Couldn't save file
 	 * @return mixed
 	 */
-	public function save(string $access_token, array $params = [])
+	public function save(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.save', $access_token, $params);
+		return $this->request->post('docs.save', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -196,8 +197,8 @@ class Docs extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('docs.search', $access_token, $params);
+		return $this->request->post('docs.search', $access_token, $params, $apiTokenType);
 	}
 }

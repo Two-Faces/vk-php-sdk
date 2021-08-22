@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Widgets;
 
-class WidgetsFields
+interface WidgetsFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

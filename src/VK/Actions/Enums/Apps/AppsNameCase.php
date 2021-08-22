@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Apps;
 
-class AppsNameCase
+interface AppsNameCase
 {
 	public const ACCUSATIVE = 'acc';
 	public const DATIVE = 'dat';

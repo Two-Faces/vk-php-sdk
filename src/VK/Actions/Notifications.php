@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiGroupAppIsNotInstalledInCommunityException;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
@@ -22,9 +23,9 @@ class Notifications extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notifications.get', $access_token, $params);
+		return $this->request->post('notifications.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -52,8 +53,8 @@ class Notifications extends Action
 	 * @throws VKApiGroupAppIsNotInstalledInCommunityException Application is not installed in community
 	 * @return mixed
 	 */
-	public function sendMessage(string $access_token, array $params = [])
+	public function sendMessage(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notifications.sendMessage', $access_token, $params);
+		return $this->request->post('notifications.sendMessage', $access_token, $params, $apiTokenType);
 	}
 }

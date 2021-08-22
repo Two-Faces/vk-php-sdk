@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class AddressWorkInfoStatus
+interface AddressWorkInfoStatus
 {
 	public const ALWAYS_OPENED = 'always_opened';
 	public const FOREVER_CLOSED = 'forever_closed';

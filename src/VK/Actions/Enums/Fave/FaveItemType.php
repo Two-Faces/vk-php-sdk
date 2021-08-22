@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Fave;
 
-class FaveItemType
+interface FaveItemType
 {
 	public const ARTICLE = 'article';
 	public const LINK = 'link';

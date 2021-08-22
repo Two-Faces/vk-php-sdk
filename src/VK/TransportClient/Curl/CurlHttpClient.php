@@ -103,10 +103,11 @@ class CurlHttpClient implements TransportClient
 		
 		if ($curl_error || $curl_error_code)
 		{
-			$error_msg = "Failed curl request. Curl error {$curl_error_code}";
+			$error_msg = sprintf("Failed curl request. Curl error %d", $curl_error_code);
+			
 			if ($curl_error)
 			{
-				$error_msg .= ": {$curl_error}";
+				$error_msg .= sprintf(": %s", $curl_error);
 			}
 			
 			$error_msg .= '.';

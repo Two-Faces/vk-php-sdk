@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Videos;
 
-class VideoFilters
+interface VideoFilters
 {
 	public const LONG = 'long';
 	public const SHORT = 'short';

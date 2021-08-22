@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Users;
 
-class UsersType
+interface UsersType
 {
 	public const ADVERTISEMENT = 'advertisement';
 	public const INSULT = 'insult';

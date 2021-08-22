@@ -3,6 +3,7 @@
 namespace VK\Actions;
 
 use VK\Actions\Enums\Notes\NotesSort;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiAccessCommentException;
 use VK\Exceptions\Api\VKApiAccessNoteCommentException;
 use VK\Exceptions\Api\VKApiAccessNoteException;
@@ -25,9 +26,9 @@ class Notes extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function add(string $access_token, array $params = [])
+	public function add(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.add', $access_token, $params);
+		return $this->request->post('notes.add', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -46,9 +47,9 @@ class Notes extends Action
 	 * @throws VKApiAccessNoteCommentException You can't comment this note
 	 * @return mixed
 	 */
-	public function createComment(string $access_token, array $params = [])
+	public function createComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.createComment', $access_token, $params);
+		return $this->request->post('notes.createComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -62,9 +63,9 @@ class Notes extends Action
 	 * @throws VKApiParamNoteIdException Note not found
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.delete', $access_token, $params);
+		return $this->request->post('notes.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -80,9 +81,9 @@ class Notes extends Action
 	 * @throws VKApiAccessCommentException Access to comment denied
 	 * @return mixed
 	 */
-	public function deleteComment(string $access_token, array $params = [])
+	public function deleteComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.deleteComment', $access_token, $params);
+		return $this->request->post('notes.deleteComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -100,9 +101,9 @@ class Notes extends Action
 	 * @throws VKApiParamNoteIdException Note not found
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.edit', $access_token, $params);
+		return $this->request->post('notes.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -118,9 +119,9 @@ class Notes extends Action
 	 * @throws VKApiAccessCommentException Access to comment denied
 	 * @return mixed
 	 */
-	public function editComment(string $access_token, array $params = [])
+	public function editComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.editComment', $access_token, $params);
+		return $this->request->post('notes.editComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -138,9 +139,9 @@ class Notes extends Action
 	 * @throws VKApiParamNoteIdException Note not found
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.get', $access_token, $params);
+		return $this->request->post('notes.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -157,9 +158,9 @@ class Notes extends Action
 	 * @throws VKApiParamNoteIdException Note not found
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.getById', $access_token, $params);
+		return $this->request->post('notes.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -177,9 +178,9 @@ class Notes extends Action
 	 * @throws VKApiAccessNoteException Access to note denied
 	 * @return mixed
 	 */
-	public function getComments(string $access_token, array $params = [])
+	public function getComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.getComments', $access_token, $params);
+		return $this->request->post('notes.getComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -194,8 +195,8 @@ class Notes extends Action
 	 * @throws VKApiAccessCommentException Access to comment denied
 	 * @return mixed
 	 */
-	public function restoreComment(string $access_token, array $params = [])
+	public function restoreComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('notes.restoreComment', $access_token, $params);
+		return $this->request->post('notes.restoreComment', $access_token, $params, $apiTokenType);
 	}
 }

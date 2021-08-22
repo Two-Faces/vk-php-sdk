@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Wall;
 
-class WallFilter
+interface WallFilter
 {
 	public const ALL = 'all';
 	public const OTHERS = 'others';

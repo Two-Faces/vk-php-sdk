@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Users;
 
-class UsersSex
+interface UsersSex
 {
 	public const ANY = 0;
 	public const FEMALE = 1;

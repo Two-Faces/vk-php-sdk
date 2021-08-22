@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Users;
 
-class UsersNameCase
+interface UsersNameCase
 {
 	public const ACCUSATIVE = 'acc';
 	public const DATIVE = 'dat';

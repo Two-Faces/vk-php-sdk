@@ -4,6 +4,7 @@ namespace VK\Actions;
 
 use VK\Actions\Enums\Pages\PagesEdit;
 use VK\Actions\Enums\Pages\PagesView;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiAccessPageException;
 use VK\Exceptions\Api\VKApiParamPageIdException;
 use VK\Exceptions\Api\VKApiParamTitleException;
@@ -22,9 +23,9 @@ class Pages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function clearCache(string $access_token, array $params = [])
+	public function clearCache(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.clearCache', $access_token, $params);
+		return $this->request->post('pages.clearCache', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -43,9 +44,9 @@ class Pages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.get', $access_token, $params);
+		return $this->request->post('pages.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -62,9 +63,9 @@ class Pages extends Action
 	 * @throws VKApiParamPageIdException Page not found
 	 * @return mixed
 	 */
-	public function getHistory(string $access_token, array $params = [])
+	public function getHistory(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.getHistory', $access_token, $params);
+		return $this->request->post('pages.getHistory', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -78,9 +79,9 @@ class Pages extends Action
 	 * @throws VKApiAccessPageException Access to page denied
 	 * @return mixed
 	 */
-	public function getTitles(string $access_token, array $params = [])
+	public function getTitles(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.getTitles', $access_token, $params);
+		return $this->request->post('pages.getTitles', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -97,9 +98,9 @@ class Pages extends Action
 	 * @throws VKApiAccessPageException Access to page denied
 	 * @return mixed
 	 */
-	public function getVersion(string $access_token, array $params = [])
+	public function getVersion(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.getVersion', $access_token, $params);
+		return $this->request->post('pages.getVersion', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -113,9 +114,9 @@ class Pages extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function parseWiki(string $access_token, array $params = [])
+	public function parseWiki(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.parseWiki', $access_token, $params);
+		return $this->request->post('pages.parseWiki', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -135,9 +136,9 @@ class Pages extends Action
 	 * @throws VKApiParamTitleException Invalid title
 	 * @return mixed
 	 */
-	public function save(string $access_token, array $params = [])
+	public function save(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.save', $access_token, $params);
+		return $this->request->post('pages.save', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -156,8 +157,8 @@ class Pages extends Action
 	 * @throws VKApiParamPageIdException Page not found
 	 * @return mixed
 	 */
-	public function saveAccess(string $access_token, array $params = [])
+	public function saveAccess(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('pages.saveAccess', $access_token, $params);
+		return $this->request->post('pages.saveAccess', $access_token, $params, $apiTokenType);
 	}
 }

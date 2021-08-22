@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Friends;
 
-class FriendsFilter
+interface FriendsFilter
 {
 	public const CONTACTS = 'contacts';
 	public const MUTUAL = 'mutual';

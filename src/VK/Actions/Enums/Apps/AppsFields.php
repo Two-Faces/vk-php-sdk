@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Apps;
 
-class AppsFields
+interface AppsFields
 {
 	public const ABOUT = 'about';
 	public const ACTIVITIES = 'activities';

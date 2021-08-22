@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Notifications;
 
-class NotificationsFilters
+interface NotificationsFilters
 {
 	public const COMMENTS = 'comments';
 	public const FOLLOWERS = 'followers';

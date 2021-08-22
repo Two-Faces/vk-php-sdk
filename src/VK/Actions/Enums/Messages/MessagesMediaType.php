@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Messages;
 
-class MessagesMediaType
+interface MessagesMediaType
 {
 	public const AUDIO = 'audio';
 	public const AUDIO_MESSAGE = 'audio_message';

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Newsfeed;
 
-class IgnoreItemType
+interface IgnoreItemType
 {
 	public const AUDIO = 'audio';
 	public const PHOTO = 'photo';

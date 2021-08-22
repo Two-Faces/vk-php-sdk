@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsSort
+interface GroupsSort
 {
 	public const _DEFAULT = 0;
 	public const ATTENDANCE = 2;

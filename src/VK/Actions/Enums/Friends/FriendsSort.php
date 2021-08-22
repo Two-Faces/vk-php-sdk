@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Friends;
 
-class FriendsSort
+interface FriendsSort
 {
 	public const DATE = 0;
 	public const MUTUAL = 1;

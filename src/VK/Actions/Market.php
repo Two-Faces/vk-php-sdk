@@ -6,6 +6,7 @@ use VK\Actions\Enums\Market\MarketReason;
 use VK\Actions\Enums\Market\MarketRev;
 use VK\Actions\Enums\Market\MarketSort;
 use VK\Actions\Enums\Market\MarketStatus;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiAccessMarketException;
 use VK\Exceptions\Api\VKApiMarketAlbumNotFoundException;
 use VK\Exceptions\Api\VKApiMarketCommentsClosedException;
@@ -43,9 +44,9 @@ class Market extends Action
 	 * @throws VKApiMarketItemHasBadLinksException Item has bad links in description
 	 * @return mixed
 	 */
-	public function add(string $access_token, array $params = [])
+	public function add(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.add', $access_token, $params);
+		return $this->request->post('market.add', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -62,9 +63,9 @@ class Market extends Action
 	 * @throws VKApiMarketTooManyAlbumsException Too many albums
 	 * @return mixed
 	 */
-	public function addAlbum(string $access_token, array $params = [])
+	public function addAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.addAlbum', $access_token, $params);
+		return $this->request->post('market.addAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -83,9 +84,9 @@ class Market extends Action
 	 * @throws VKApiMarketItemAlreadyAddedException Item already added to album
 	 * @return mixed
 	 */
-	public function addToAlbum(string $access_token, array $params = [])
+	public function addToAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.addToAlbum', $access_token, $params);
+		return $this->request->post('market.addToAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -105,9 +106,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function createComment(string $access_token, array $params = [])
+	public function createComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.createComment', $access_token, $params);
+		return $this->request->post('market.createComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -122,9 +123,9 @@ class Market extends Action
 	 * @throws VKApiAccessMarketException Access denied
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.delete', $access_token, $params);
+		return $this->request->post('market.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -139,9 +140,9 @@ class Market extends Action
 	 * @throws VKApiMarketAlbumNotFoundException Album not found
 	 * @return mixed
 	 */
-	public function deleteAlbum(string $access_token, array $params = [])
+	public function deleteAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.deleteAlbum', $access_token, $params);
+		return $this->request->post('market.deleteAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -155,9 +156,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function deleteComment(string $access_token, array $params = [])
+	public function deleteComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.deleteComment', $access_token, $params);
+		return $this->request->post('market.deleteComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -182,9 +183,9 @@ class Market extends Action
 	 * @throws VKApiMarketItemHasBadLinksException Item has bad links in description
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.edit', $access_token, $params);
+		return $this->request->post('market.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -202,9 +203,9 @@ class Market extends Action
 	 * @throws VKApiMarketAlbumNotFoundException Album not found
 	 * @return mixed
 	 */
-	public function editAlbum(string $access_token, array $params = [])
+	public function editAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.editAlbum', $access_token, $params);
+		return $this->request->post('market.editAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -220,9 +221,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function editComment(string $access_token, array $params = [])
+	public function editComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.editComment', $access_token, $params);
+		return $this->request->post('market.editComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -239,9 +240,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.get', $access_token, $params);
+		return $this->request->post('market.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -255,9 +256,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getAlbumById(string $access_token, array $params = [])
+	public function getAlbumById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.getAlbumById', $access_token, $params);
+		return $this->request->post('market.getAlbumById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -272,9 +273,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getAlbums(string $access_token, array $params = [])
+	public function getAlbums(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.getAlbums', $access_token, $params);
+		return $this->request->post('market.getAlbums', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -288,9 +289,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.getById', $access_token, $params);
+		return $this->request->post('market.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -304,9 +305,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getCategories(string $access_token, array $params = [])
+	public function getCategories(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.getCategories', $access_token, $params);
+		return $this->request->post('market.getCategories', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -328,9 +329,9 @@ class Market extends Action
 	 * @throws VKApiMarketCommentsClosedException Comments for this market are closed
 	 * @return mixed
 	 */
-	public function getComments(string $access_token, array $params = [])
+	public function getComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.getComments', $access_token, $params);
+		return $this->request->post('market.getComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -347,9 +348,9 @@ class Market extends Action
 	 * @throws VKApiMarketItemNotFoundException Item not found
 	 * @return mixed
 	 */
-	public function removeFromAlbum(string $access_token, array $params = [])
+	public function removeFromAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.removeFromAlbum', $access_token, $params);
+		return $this->request->post('market.removeFromAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -367,9 +368,9 @@ class Market extends Action
 	 * @throws VKApiMarketAlbumNotFoundException Album not found
 	 * @return mixed
 	 */
-	public function reorderAlbums(string $access_token, array $params = [])
+	public function reorderAlbums(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.reorderAlbums', $access_token, $params);
+		return $this->request->post('market.reorderAlbums', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -389,9 +390,9 @@ class Market extends Action
 	 * @throws VKApiMarketItemNotFoundException Item not found
 	 * @return mixed
 	 */
-	public function reorderItems(string $access_token, array $params = [])
+	public function reorderItems(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.reorderItems', $access_token, $params);
+		return $this->request->post('market.reorderItems', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -406,9 +407,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function report(string $access_token, array $params = [])
+	public function report(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.report', $access_token, $params);
+		return $this->request->post('market.report', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -423,9 +424,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function reportComment(string $access_token, array $params = [])
+	public function reportComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.reportComment', $access_token, $params);
+		return $this->request->post('market.reportComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -441,9 +442,9 @@ class Market extends Action
 	 * @throws VKApiMarketRestoreTooLateException Too late for restore
 	 * @return mixed
 	 */
-	public function restore(string $access_token, array $params = [])
+	public function restore(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.restore', $access_token, $params);
+		return $this->request->post('market.restore', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -457,9 +458,9 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function restoreComment(string $access_token, array $params = [])
+	public function restoreComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.restoreComment', $access_token, $params);
+		return $this->request->post('market.restoreComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -483,8 +484,8 @@ class Market extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('market.search', $access_token, $params);
+		return $this->request->post('market.search', $access_token, $params, $apiTokenType);
 	}
 }

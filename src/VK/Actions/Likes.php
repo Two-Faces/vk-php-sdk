@@ -5,6 +5,7 @@ namespace VK\Actions;
 use VK\Actions\Enums\Likes\LikesFilter;
 use VK\Actions\Enums\Likes\LikesFriendsOnly;
 use VK\Actions\Enums\Likes\LikesType;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
 
@@ -23,9 +24,9 @@ class Likes extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function add(string $access_token, array $params = [])
+	public function add(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('likes.add', $access_token, $params);
+		return $this->request->post('likes.add', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -40,9 +41,9 @@ class Likes extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('likes.delete', $access_token, $params);
+		return $this->request->post('likes.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -64,9 +65,9 @@ class Likes extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getList(string $access_token, array $params = [])
+	public function getList(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('likes.getList', $access_token, $params);
+		return $this->request->post('likes.getList', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -82,8 +83,8 @@ class Likes extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function isLiked(string $access_token, array $params = [])
+	public function isLiked(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('likes.isLiked', $access_token, $params);
+		return $this->request->post('likes.isLiked', $access_token, $params, $apiTokenType);
 	}
 }

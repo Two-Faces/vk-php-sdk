@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Photos;
 
-class PhotosReason
+interface PhotosReason
 {
 	public const ADULT_MATERIAL = 5;
 	public const CHILD_PORNOGRAPHY = 1;

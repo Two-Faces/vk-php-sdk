@@ -4,6 +4,7 @@ namespace VK\Actions;
 
 use VK\Actions\Enums\Photos\PhotosReason;
 use VK\Actions\Enums\Photos\PhotosSort;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VKApiAlbumsLimitException;
 use VK\Exceptions\Api\VKApiBlockedException;
 use VK\Exceptions\Api\VKApiMessagesDenySendException;
@@ -29,9 +30,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function confirmTag(string $access_token, array $params = [])
+	public function confirmTag(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.confirmTag', $access_token, $params);
+		return $this->request->post('photos.confirmTag', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -46,9 +47,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function copy(string $access_token, array $params = [])
+	public function copy(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.copy', $access_token, $params);
+		return $this->request->post('photos.copy', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -68,9 +69,9 @@ class Photos extends Action
 	 * @throws VKApiAlbumsLimitException Albums number limit is reached
 	 * @return mixed
 	 */
-	public function createAlbum(string $access_token, array $params = [])
+	public function createAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.createAlbum', $access_token, $params);
+		return $this->request->post('photos.createAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -91,9 +92,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function createComment(string $access_token, array $params = [])
+	public function createComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.createComment', $access_token, $params);
+		return $this->request->post('photos.createComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -107,9 +108,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function delete(string $access_token, array $params = [])
+	public function delete(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.delete', $access_token, $params);
+		return $this->request->post('photos.delete', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -124,9 +125,9 @@ class Photos extends Action
 	 * @throws VKApiParamAlbumIdException Invalid album id
 	 * @return mixed
 	 */
-	public function deleteAlbum(string $access_token, array $params = [])
+	public function deleteAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.deleteAlbum', $access_token, $params);
+		return $this->request->post('photos.deleteAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -140,9 +141,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function deleteComment(string $access_token, array $params = [])
+	public function deleteComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.deleteComment', $access_token, $params);
+		return $this->request->post('photos.deleteComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -162,9 +163,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function edit(string $access_token, array $params = [])
+	public function edit(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.edit', $access_token, $params);
+		return $this->request->post('photos.edit', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -185,9 +186,9 @@ class Photos extends Action
 	 * @throws VKApiParamAlbumIdException Invalid album id
 	 * @return mixed
 	 */
-	public function editAlbum(string $access_token, array $params = [])
+	public function editAlbum(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.editAlbum', $access_token, $params);
+		return $this->request->post('photos.editAlbum', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -203,9 +204,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function editComment(string $access_token, array $params = [])
+	public function editComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.editComment', $access_token, $params);
+		return $this->request->post('photos.editComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -227,9 +228,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function get(string $access_token, array $params = [])
+	public function get(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.get', $access_token, $params);
+		return $this->request->post('photos.get', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -248,9 +249,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getAlbums(string $access_token, array $params = [])
+	public function getAlbums(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getAlbums', $access_token, $params);
+		return $this->request->post('photos.getAlbums', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -264,9 +265,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getAlbumsCount(string $access_token, array $params = [])
+	public function getAlbumsCount(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getAlbumsCount', $access_token, $params);
+		return $this->request->post('photos.getAlbumsCount', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -287,9 +288,9 @@ class Photos extends Action
 	 * @throws VKApiBlockedException Content blocked
 	 * @return mixed
 	 */
-	public function getAll(string $access_token, array $params = [])
+	public function getAll(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getAll', $access_token, $params);
+		return $this->request->post('photos.getAll', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -307,9 +308,9 @@ class Photos extends Action
 	 * @throws VKApiParamAlbumIdException Invalid album id
 	 * @return mixed
 	 */
-	public function getAllComments(string $access_token, array $params = [])
+	public function getAllComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getAllComments', $access_token, $params);
+		return $this->request->post('photos.getAllComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -324,9 +325,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getById(string $access_token, array $params = [])
+	public function getById(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getById', $access_token, $params);
+		return $this->request->post('photos.getById', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -342,9 +343,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getChatUploadServer(string $access_token, array $params = [])
+	public function getChatUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getChatUploadServer', $access_token, $params);
+		return $this->request->post('photos.getChatUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -366,9 +367,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getComments(string $access_token, array $params = [])
+	public function getComments(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getComments', $access_token, $params);
+		return $this->request->post('photos.getComments', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -381,9 +382,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getMarketAlbumUploadServer(string $access_token, array $params = [])
+	public function getMarketAlbumUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getMarketAlbumUploadServer', $access_token, $params);
+		return $this->request->post('photos.getMarketAlbumUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -400,9 +401,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getMarketUploadServer(string $access_token, array $params = [])
+	public function getMarketUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getMarketUploadServer', $access_token, $params);
+		return $this->request->post('photos.getMarketUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -416,9 +417,9 @@ class Photos extends Action
 	 * @throws VKApiMessagesDenySendException Can't send messages for users without permission
 	 * @return mixed
 	 */
-	public function getMessagesUploadServer(string $access_token, array $params = [])
+	public function getMessagesUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getMessagesUploadServer', $access_token, $params);
+		return $this->request->post('photos.getMessagesUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -432,9 +433,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getNewTags(string $access_token, array $params = [])
+	public function getNewTags(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getNewTags', $access_token, $params);
+		return $this->request->post('photos.getNewTags', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -451,9 +452,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getOwnerCoverPhotoUploadServer(string $access_token, array $params = [])
+	public function getOwnerCoverPhotoUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getOwnerCoverPhotoUploadServer', $access_token, $params);
+		return $this->request->post('photos.getOwnerCoverPhotoUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -466,9 +467,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getOwnerPhotoUploadServer(string $access_token, array $params = [])
+	public function getOwnerPhotoUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getOwnerPhotoUploadServer', $access_token, $params);
+		return $this->request->post('photos.getOwnerPhotoUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -483,9 +484,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getTags(string $access_token, array $params = [])
+	public function getTags(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getTags', $access_token, $params);
+		return $this->request->post('photos.getTags', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -499,9 +500,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getUploadServer(string $access_token, array $params = [])
+	public function getUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getUploadServer', $access_token, $params);
+		return $this->request->post('photos.getUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -518,9 +519,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getUserPhotos(string $access_token, array $params = [])
+	public function getUserPhotos(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getUserPhotos', $access_token, $params);
+		return $this->request->post('photos.getUserPhotos', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -533,9 +534,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getWallUploadServer(string $access_token, array $params = [])
+	public function getWallUploadServer(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.getWallUploadServer', $access_token, $params);
+		return $this->request->post('photos.getWallUploadServer', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -550,9 +551,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function makeCover(string $access_token, array $params = [])
+	public function makeCover(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.makeCover', $access_token, $params);
+		return $this->request->post('photos.makeCover', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -567,9 +568,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function move(string $access_token, array $params = [])
+	public function move(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.move', $access_token, $params);
+		return $this->request->post('photos.move', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -588,9 +589,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function putTag(string $access_token, array $params = [])
+	public function putTag(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.putTag', $access_token, $params);
+		return $this->request->post('photos.putTag', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -605,9 +606,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function removeTag(string $access_token, array $params = [])
+	public function removeTag(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.removeTag', $access_token, $params);
+		return $this->request->post('photos.removeTag', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -623,9 +624,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function reorderAlbums(string $access_token, array $params = [])
+	public function reorderAlbums(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.reorderAlbums', $access_token, $params);
+		return $this->request->post('photos.reorderAlbums', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -642,9 +643,9 @@ class Photos extends Action
 	 * @throws VKApiParamPhotosException Invalid photos
 	 * @return mixed
 	 */
-	public function reorderPhotos(string $access_token, array $params = [])
+	public function reorderPhotos(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.reorderPhotos', $access_token, $params);
+		return $this->request->post('photos.reorderPhotos', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -659,9 +660,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function report(string $access_token, array $params = [])
+	public function report(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.report', $access_token, $params);
+		return $this->request->post('photos.report', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -676,9 +677,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function reportComment(string $access_token, array $params = [])
+	public function reportComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.reportComment', $access_token, $params);
+		return $this->request->post('photos.reportComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -692,9 +693,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function restore(string $access_token, array $params = [])
+	public function restore(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.restore', $access_token, $params);
+		return $this->request->post('photos.restore', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -708,9 +709,9 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function restoreComment(string $access_token, array $params = [])
+	public function restoreComment(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.restoreComment', $access_token, $params);
+		return $this->request->post('photos.restoreComment', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -733,9 +734,9 @@ class Photos extends Action
 	 * @throws VKApiParamHashException Invalid hash
 	 * @return mixed
 	 */
-	public function save(string $access_token, array $params = [])
+	public function save(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.save', $access_token, $params);
+		return $this->request->post('photos.save', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -753,9 +754,9 @@ class Photos extends Action
 	 * @throws VKApiParamPhotoException Invalid photo
 	 * @return mixed
 	 */
-	public function saveMarketAlbumPhoto(string $access_token, array $params = [])
+	public function saveMarketAlbumPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.saveMarketAlbumPhoto', $access_token, $params);
+		return $this->request->post('photos.saveMarketAlbumPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -775,9 +776,9 @@ class Photos extends Action
 	 * @throws VKApiParamPhotoException Invalid photo
 	 * @return mixed
 	 */
-	public function saveMarketPhoto(string $access_token, array $params = [])
+	public function saveMarketPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.saveMarketPhoto', $access_token, $params);
+		return $this->request->post('photos.saveMarketPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -795,9 +796,9 @@ class Photos extends Action
 	 * @throws VKApiParamHashException Invalid hash
 	 * @return mixed
 	 */
-	public function saveMessagesPhoto(string $access_token, array $params = [])
+	public function saveMessagesPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.saveMessagesPhoto', $access_token, $params);
+		return $this->request->post('photos.saveMessagesPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -812,9 +813,9 @@ class Photos extends Action
 	 * @throws VKApiParamPhotoException Invalid photo
 	 * @return mixed
 	 */
-	public function saveOwnerCoverPhoto(string $access_token, array $params = [])
+	public function saveOwnerCoverPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.saveOwnerCoverPhoto', $access_token, $params);
+		return $this->request->post('photos.saveOwnerCoverPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -830,9 +831,9 @@ class Photos extends Action
 	 * @throws VKApiParamPhotoException Invalid photo
 	 * @return mixed
 	 */
-	public function saveOwnerPhoto(string $access_token, array $params = [])
+	public function saveOwnerPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.saveOwnerPhoto', $access_token, $params);
+		return $this->request->post('photos.saveOwnerPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -855,9 +856,9 @@ class Photos extends Action
 	 * @throws VKApiParamHashException Invalid hash
 	 * @return mixed
 	 */
-	public function saveWallPhoto(string $access_token, array $params = [])
+	public function saveWallPhoto(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.saveWallPhoto', $access_token, $params);
+		return $this->request->post('photos.saveWallPhoto', $access_token, $params, $apiTokenType);
 	}
 
 	/**
@@ -878,8 +879,8 @@ class Photos extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function search(string $access_token, array $params = [])
+	public function search(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('photos.search', $access_token, $params);
+		return $this->request->post('photos.search', $access_token, $params, $apiTokenType);
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Wall;
 
-class WallReason
+interface WallReason
 {
 	public const ADULT_MATERIAL = 5;
 	public const CHILD_PORNOGRAPHY = 1;

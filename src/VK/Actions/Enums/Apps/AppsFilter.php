@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Apps;
 
-class AppsFilter
+interface AppsFilter
 {
 	public const _NEW = 'new';
 	public const FAVORITE = 'favorite';

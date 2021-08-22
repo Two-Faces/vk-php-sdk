@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupTopics
+interface GroupTopics
 {
 	public const DISABLED = 0;
 	public const LIMITED = 2;

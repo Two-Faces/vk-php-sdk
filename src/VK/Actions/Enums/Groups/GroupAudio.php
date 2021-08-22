@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupAudio
+interface GroupAudio
 {
 	public const DISABLED = 0;
 	public const LIMITED = 2;

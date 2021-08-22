@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Boards;
 
-class BoardPreview
+interface BoardPreview
 {
 	public const FIRST = 1;
 	public const LAST = 2;

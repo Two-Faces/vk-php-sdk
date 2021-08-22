@@ -2,7 +2,7 @@
 
 namespace VK\Actions\Enums\Groups;
 
-class GroupsMarketCurrency
+interface GroupsMarketCurrency
 {
 	public const EURO = 978;
 	public const KAZAKH_TENGE = 398;

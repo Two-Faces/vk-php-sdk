@@ -2,6 +2,7 @@
 
 namespace VK\Actions;
 
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\VKApiException;
 use VK\Exceptions\VKClientException;
 
@@ -22,8 +23,8 @@ class Search extends Action
 	 * @throws VKApiException
 	 * @return mixed
 	 */
-	public function getHints(string $access_token, array $params = [])
+	public function getHints(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER)
 	{
-		return $this->request->post('search.getHints', $access_token, $params);
+		return $this->request->post('search.getHints', $access_token, $params, $apiTokenType);
 	}
 }
