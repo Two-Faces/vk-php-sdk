@@ -37,6 +37,7 @@ use VK\Actions\Utils;
 use VK\Actions\Video;
 use VK\Actions\Wall;
 use VK\Actions\Widgets;
+use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\VkApiExecuteCodeCompilationException;
 use VK\Exceptions\Api\VkApiExecuteCodeExecutionException;
 use VK\Exceptions\VKApiException;
@@ -169,16 +170,15 @@ class VKApiClient
 	 *
 	 * @param string $access_token
 	 * @param array $params
+	 * @param int $apiTokenType
 	 *
 	 * @return mixed
 	 * @throws VKApiException
 	 * @throws VKClientException
-	 * @throws VkApiExecuteCodeCompilationException
-	 * @throws VkApiExecuteCodeExecutionException
 	 */
-	public function execute(string $access_token, array $params = [])
+	public function execute(string $access_token, array $params = [], int $apiTokenType = VKApiTokenTypes::USER): mixed
 	{
-		return $this->request->post('execute', $access_token, $params);
+		return $this->request->post('execute', $access_token, $params, $apiTokenType);
 	}
 	
 	public function fave(): Fave
