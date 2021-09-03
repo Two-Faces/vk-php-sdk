@@ -78,6 +78,16 @@ class VKApiRequest
 		
 		$parsedResponse = $this->parseResponse($response);
 		
+		if (function_exists('logit'))
+		{
+			logit(
+				message: 'VK request performed',
+				payload: compact('method', 'params', 'access_token', 'apiTokenType', 'parsedResponse'),
+				fileOnly: true,
+				channel: 'requests'
+			);
+		}
+		
 		if ($parsedResponse instanceof VKApiError)
 		{
 			if (function_exists('recognizeCaptcha'))
