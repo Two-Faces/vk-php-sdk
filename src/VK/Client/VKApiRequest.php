@@ -85,7 +85,7 @@ class VKApiRequest
 				payload: compact('method', 'params', 'access_token', 'apiTokenType', 'parsedResponse'),
 				fileOnly: true,
 				channel: 'requests'
-			);
+			)->debug();
 		}
 		
 		if ($parsedResponse instanceof VKApiError)
