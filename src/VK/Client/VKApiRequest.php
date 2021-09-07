@@ -76,7 +76,25 @@ class VKApiRequest
 			throw new VKClientException($e);
 		}
 		
-		$parsedResponse = $this->parseResponse($response);
+		try
+		{
+			$parsedResponse = $this->parseResponse($response);
+		}
+		catch (VKApiException|VKClientException|Exception $exception)
+		{
+			if (function_exists('logit'))
+			{
+				logit(
+					message: 'VK request failed',
+					payload: compact('method', 'params', 'access_token', 'apiTokenType'),
+					exception: $exception,
+					fileOnly: true,
+					channel: 'requests'
+				)->error();
+			}
+			
+			throw $exception;
+		}
 		
 		if (function_exists('logit'))
 		{
@@ -110,7 +128,25 @@ class VKApiRequest
 					throw new VKClientException($e);
 				}
 				
-				$parsedResponse = $this->parseResponse($response);
+				try
+				{
+					$parsedResponse = $this->parseResponse($response);
+				}
+				catch (VKApiException|VKClientException|Exception $exception)
+				{
+					if (function_exists('logit'))
+					{
+						logit(
+							message: 'VK request failed',
+							payload: compact('method', 'params', 'access_token', 'apiTokenType'),
+							exception: $exception,
+							fileOnly: true,
+							channel: 'requests'
+						)->error();
+					}
+					
+					throw $exception;
+				}
 			}
 			else
 			{
