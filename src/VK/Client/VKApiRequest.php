@@ -4,6 +4,7 @@ namespace VK\Client;
 
 use Exception;
 use JsonException;
+use Throwable;
 use VK\Client\Enums\VKApiTokenTypes;
 use VK\Exceptions\Api\ExceptionMapper;
 use VK\Exceptions\Api\VKApiCaptchaException;
@@ -84,15 +85,19 @@ class VKApiRequest
 		{
 			if (function_exists('logVkApiRequest'))
 			{
-				logVkApiRequest(
-					successful: false,
-					method: $method,
-					params: $params,
-					accessToken: $access_token,
-					apiTokenType: $apiTokenType,
-					exception: $exception,
-					fileOnly: false
-				);
+				try
+				{
+					logVkApiRequest(
+						successful: false,
+						method: $method,
+						params: $params,
+						accessToken: $access_token,
+						apiTokenType: $apiTokenType,
+						exception: $exception,
+						fileOnly: false
+					);
+				}
+				catch (Throwable) {}
 			}
 			
 			throw $exception;
@@ -100,15 +105,19 @@ class VKApiRequest
 		
 		if (function_exists('logVkApiRequest'))
 		{
-			logVkApiRequest(
-				successful: true,
-				method: $method,
-				params: $params,
-				response: $parsedResponse,
-				accessToken: $access_token,
-				apiTokenType: $apiTokenType,
-				fileOnly: false
-			);
+			try
+			{
+				logVkApiRequest(
+					successful: true,
+					method: $method,
+					params: $params,
+					response: $parsedResponse,
+					accessToken: $access_token,
+					apiTokenType: $apiTokenType,
+					fileOnly: false
+				);
+			}
+			catch (Throwable) {}
 		}
 		
 		if ($parsedResponse instanceof VKApiError)
@@ -141,15 +150,19 @@ class VKApiRequest
 				{
 					if (function_exists('logVkApiRequest'))
 					{
-						logVkApiRequest(
-							successful: false,
-							method: $method,
-							params: $params,
-							accessToken: $access_token,
-							apiTokenType: $apiTokenType,
-							exception: $exception,
-							fileOnly: false
-						);
+						try
+						{
+							logVkApiRequest(
+								successful: false,
+								method: $method,
+								params: $params,
+								accessToken: $access_token,
+								apiTokenType: $apiTokenType,
+								exception: $exception,
+								fileOnly: false
+							);
+						}
+						catch (Throwable) {}
 					}
 					
 					throw $exception;
