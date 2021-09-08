@@ -82,28 +82,33 @@ class VKApiRequest
 		}
 		catch (VKApiException|VKClientException|Exception $exception)
 		{
-			if (function_exists('logit'))
+			if (function_exists('logVkApiRequest'))
 			{
-				logit(
-					message: 'VK request failed',
-					payload: compact('method', 'params', 'access_token', 'apiTokenType'),
+				logVkApiRequest(
+					successful: false,
+					method: $method,
+					params: $params,
+					accessToken: $access_token,
+					apiTokenType: $apiTokenType,
 					exception: $exception,
-					fileOnly: true,
-					channel: 'requests'
-				)->error();
+					fileOnly: false
+				);
 			}
 			
 			throw $exception;
 		}
 		
-		if (function_exists('logit'))
+		if (function_exists('logVkApiRequest'))
 		{
-			logit(
-				message: 'VK request performed',
-				payload: compact('method', 'params', 'access_token', 'apiTokenType', 'parsedResponse'),
-				fileOnly: true,
-				channel: 'requests'
-			)->debug();
+			logVkApiRequest(
+				successful: true,
+				method: $method,
+				params: $params,
+				response: $parsedResponse,
+				accessToken: $access_token,
+				apiTokenType: $apiTokenType,
+				fileOnly: false
+			);
 		}
 		
 		if ($parsedResponse instanceof VKApiError)
@@ -134,15 +139,17 @@ class VKApiRequest
 				}
 				catch (VKApiException|VKClientException|Exception $exception)
 				{
-					if (function_exists('logit'))
+					if (function_exists('logVkApiRequest'))
 					{
-						logit(
-							message: 'VK request failed',
-							payload: compact('method', 'params', 'access_token', 'apiTokenType'),
+						logVkApiRequest(
+							successful: false,
+							method: $method,
+							params: $params,
+							accessToken: $access_token,
+							apiTokenType: $apiTokenType,
 							exception: $exception,
-							fileOnly: true,
-							channel: 'requests'
-						)->error();
+							fileOnly: false
+						);
 					}
 					
 					throw $exception;
