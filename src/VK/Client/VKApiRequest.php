@@ -304,7 +304,7 @@ class VKApiRequest
 		{
 			$key = $params[static::PARAM_ACCESS_TOKEN];
 			$maxAttempts = match ($apiTokenType) {
-				VKApiTokenTypes::GROUP, VKApiTokenTypes::APP => 20,
+				VKApiTokenTypes::GROUP, VKApiTokenTypes::APP => 19,
 				default => 3
 			};
 			$decaySeconds = 1;
