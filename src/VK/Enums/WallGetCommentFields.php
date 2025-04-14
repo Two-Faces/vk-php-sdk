@@ -122,5 +122,6 @@ class WallGetCommentFields
 	public const IS_NFT = 'is_nft';
 	public const IS_NFT_PHOTO = 'is_nft_photo';
 	public const IS_VERIFIED = 'is_verified';
+	public const URL = 'url';
 }
 

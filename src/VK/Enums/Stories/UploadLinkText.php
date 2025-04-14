@@ -25,5 +25,8 @@ class UploadLinkText
 	public const INSTALL = 'install';
 	public const READ = 'read';
 	public const CALENDAR = 'calendar';
+	public const MARKET_ONLINE_BOOKING = 'market_online_booking';
+	public const MARKET_LINK = 'market_link';
+	public const MESSAGE_TO_BC = 'message_to_bc';
 }
 

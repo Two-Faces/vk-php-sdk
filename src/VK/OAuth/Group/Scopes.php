@@ -1,8 +1,10 @@
 <?php
 
-namespace VK\OAuth\Scopes;
+declare(strict_types = 1);
 
-class VKOAuthGroupScope
+namespace VK\OAuth\Group;
+
+class Scopes
 {
     public const PHOTOS = 4;
     public const APP_WIDGET = 64;

@@ -112,21 +112,6 @@ class Stories implements ActionInterface
 
 
 	/**
-	 * @param string $access_token
-	 * @param array $params
-	 * - @var integer owner_id
-	 * - @var integer story_id
-	 * @return mixed
-	 * @throws VKClientException
-	 * @throws VKApiException
-	 */
-	public function getDetailedStats(string $access_token, array $params = [])
-	{
-		return $this->request->post('stories.getDetailedStats', $access_token, $params);
-	}
-
-
-	/**
 	 * Returns URL for uploading a story with photo.
 	 * @param string $access_token
 	 * @param array $params

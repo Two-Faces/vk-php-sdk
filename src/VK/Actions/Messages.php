@@ -98,6 +98,7 @@ class Messages implements ActionInterface
 	 * @throws VKApiMessagesMemberAccessToGroupDeniedException Can't add user to chat, because user has no access to group
 	 * @throws VKApiMessagesChatUnsupportedException Chat not supported
 	 * @throws VKApiMessagesGroupPeerAccessException Your community can't interact with this peer
+	 * @throws VKApiMessagesWritingDisabledForChatException Writing is disabled for this chat
 	 */
 	public function addChatUser(string $access_token, array $params = [])
 	{
@@ -171,6 +172,7 @@ class Messages implements ActionInterface
 	 * @throws VKClientException
 	 * @throws VKApiException
 	 * @throws VKApiMessagesCantDeleteForAllException Can't delete this message for everybody
+	 * @throws VKApiMessagesChatNotExistException Chat does not exist
 	 */
 	public function delete(string $access_token, array $params = [])
 	{
@@ -296,6 +298,7 @@ class Messages implements ActionInterface
 	 * @throws VKApiMessagesChatNotAdminException You are not admin of this chat
 	 * @throws VKApiMessagesChatDisabledException Chat was disabled
 	 * @throws VKApiMessagesChatUnsupportedException Chat not supported
+	 * @throws VKApiMessagesWritingDisabledForChatException Writing is disabled for this chat
 	 */
 	public function editChat(string $access_token, array $params = [])
 	{
@@ -498,6 +501,7 @@ class Messages implements ActionInterface
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException
+	 * @throws VKApiMessagesChatNotExistException Chat does not exist
 	 */
 	public function getHistoryAttachments(string $access_token, array $params = [])
 	{
@@ -604,6 +608,7 @@ class Messages implements ActionInterface
 	 * @throws VKApiMessagesTooNewPtsException Value of ts or pts is too new
 	 * @throws VKApiTimeoutException Method execution was interrupted due to timeout
 	 * @throws VKApiMessagesChatNotExistException Chat does not exist
+	 * @throws VKApiMessagesContactNotFoundException Contact not found
 	 * @throws VKApiMessagesDropDeviceCacheException Drop device cache
 	 */
 	public function getLongPollHistory(string $access_token, array $params = [])
@@ -826,6 +831,7 @@ class Messages implements ActionInterface
 	 * @throws VKApiMessagesCantPinOneTimeStoryException Cannot pin one-time story
 	 * @throws VKApiMessagesCantPinExpiringMessageException Cannot pin an expiring message
 	 * @throws VKApiMessagesChatNotExistException Chat does not exist
+	 * @throws VKApiMessagesWritingDisabledForChatException Writing is disabled for this chat
 	 */
 	public function pin(string $access_token, array $params = [])
 	{
@@ -1065,6 +1071,7 @@ class Messages implements ActionInterface
 	 * @throws VKApiException
 	 * @throws VKApiMessagesChatNotAdminException You are not admin of this chat
 	 * @throws VKApiMessagesChatNotExistException Chat does not exist
+	 * @throws VKApiMessagesWritingDisabledForChatException Writing is disabled for this chat
 	 */
 	public function unpin(string $access_token, array $params = [])
 	{

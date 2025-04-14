@@ -460,6 +460,10 @@ class ExceptionMapper
 				return new VKApiMarketDisabledException($error);
 			case 1526:
 				return new VKApiMarketServicesDisabledException($error);
+			case 1531:
+				return new VKApiMarketAddToServiceAlbumException($error);
+			case 1532:
+				return new VKApiMarketAddToMarketAlbumException($error);
 			case 1600:
 				return new VKApiStoryExpiredException($error);
 			case 1602:

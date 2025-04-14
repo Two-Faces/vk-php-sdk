@@ -174,6 +174,22 @@ class Video implements ActionInterface
 
 
 	/**
+	 * Deletes a thread on a video.
+	 * @param string $access_token
+	 * @param array $params
+	 * - @var integer owner_id: ID of the user or community that owns the video.
+	 * - @var integer thread_id: ID of the main comment to be deleted as thread.
+	 * @return mixed
+	 * @throws VKClientException
+	 * @throws VKApiException
+	 */
+	public function deleteThread(string $access_token, array $params = [])
+	{
+		return $this->request->post('video.deleteThread', $access_token, $params);
+	}
+
+
+	/**
 	 * Edits information about a video on a user or community page.
 	 * @param string $access_token
 	 * @param array $params
@@ -355,6 +371,25 @@ class Video implements ActionInterface
 
 
 	/**
+	 * Returns oEmbed player to video
+	 * @param string $access_token
+	 * @param array $params
+	 * - @var string url: Link to video
+	 * - @var integer maxwidth: Maximum width of player
+	 * - @var integer maxheight: Maximum width of player
+	 * @return mixed
+	 * @throws VKClientException
+	 * @throws VKApiException
+	 * @throws VKApiAccessVideoException Access denied
+	 * @throws VKApiNotFoundException Not found
+	 */
+	public function getOembed(string $access_token, array $params = [])
+	{
+		return $this->request->post('video.getOembed', $access_token, $params);
+	}
+
+
+	/**
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer owner_id
@@ -507,6 +542,22 @@ class Video implements ActionInterface
 	public function restoreComment(string $access_token, array $params = [])
 	{
 		return $this->request->post('video.restoreComment', $access_token, $params);
+	}
+
+
+	/**
+	 * Restores a deleted thread on a video.
+	 * @param string $access_token
+	 * @param array $params
+	 * - @var integer owner_id: ID of the user or community that owns the video.
+	 * - @var integer thread_id: ID of the main comment to be deleted as thread.
+	 * @return mixed
+	 * @throws VKClientException
+	 * @throws VKApiException
+	 */
+	public function restoreThread(string $access_token, array $params = [])
+	{
+		return $this->request->post('video.restoreThread', $access_token, $params);
 	}
 
 

@@ -1,8 +1,10 @@
 <?php
 
-namespace VK\OAuth;
+declare(strict_types = 1);
 
-class VKOAuthDisplay
+namespace VK\OAuth\Group;
+
+class Display
 {
     public const PAGE = 'page';
     public const POPUP = 'popup';

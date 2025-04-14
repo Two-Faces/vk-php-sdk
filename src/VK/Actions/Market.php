@@ -15,6 +15,8 @@ use VK\Enums\MarketSearchItemsSortDirection;
 use VK\Enums\MarketSearchRev;
 use VK\Enums\MarketSearchSort;
 use VK\Exceptions\Api\VKApiAccessMarketException;
+use VK\Exceptions\Api\VKApiMarketAddToMarketAlbumException;
+use VK\Exceptions\Api\VKApiMarketAddToServiceAlbumException;
 use VK\Exceptions\Api\VKApiMarketAlbumMainHiddenException;
 use VK\Exceptions\Api\VKApiMarketAlbumNotFoundException;
 use VK\Exceptions\Api\VKApiMarketCantChangeVkpayStatusException;
@@ -201,6 +203,8 @@ class Market implements ActionInterface
 	 * @throws VKApiMarketItemNotFoundException Item not found
 	 * @throws VKApiMarketTooManyItemsInAlbumException Too many items in album
 	 * @throws VKApiMarketItemAlreadyAddedException Item already added to album
+	 * @throws VKApiMarketAddToServiceAlbumException Add item to service album
+	 * @throws VKApiMarketAddToMarketAlbumException Add service to market album
 	 */
 	public function addToAlbum(string $access_token, array $params = [])
 	{
@@ -612,6 +616,23 @@ class Market implements ActionInterface
 	public function getComments(string $access_token, array $params = [])
 	{
 		return $this->request->post('market.getComments', $access_token, $params);
+	}
+
+
+	/**
+	 * @param string $access_token
+	 * @param array $params
+	 * - @var integer current_group_id: Group which represents content
+	 * - @var boolean public_only
+	 * - @var integer offset: Offset needed to return a specific subset of users.
+	 * - @var integer count: Number of users to return.
+	 * @return mixed
+	 * @throws VKClientException
+	 * @throws VKApiException
+	 */
+	public function getFavesForAttach(string $access_token, array $params = [])
+	{
+		return $this->request->post('market.getFavesForAttach', $access_token, $params);
 	}
 
 
