@@ -1,12 +1,12 @@
 {
-  "name": "vkcom/vk-php-sdk",
+  "name": "two-faces/vk-php-sdk",
   "description": "VK PHP SDK",
   "keywords": [
     "vk",
     "sdk"
   ],
   "type": "library",
-  "homepage": "https://github.com/VKCOM/vk-php-sdk",
+  "homepage": "https://github.com/two-faces/vk-php-sdk",
   "license": "MIT",
   "require": {
     "php": "^8.1",

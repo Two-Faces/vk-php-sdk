@@ -43,10 +43,10 @@ class Account implements ActionInterface
 
 
 	/**
-	 * Changes a user password after access is successfully restored with the [vk.com/dev/auth.restore|auth.restore] method.
+	 * Changes a user password after access is successfully restored with the [vk.ru/dev/auth.restore|auth.restore] method.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string restore_sid: Session id received after the [vk.com/dev/auth.restore|auth.restore] method is executed. (If the password is changed right after the access was restored)
+	 * - @var string restore_sid: Session id received after the [vk.ru/dev/auth.restore|auth.restore] method is executed. (If the password is changed right after the access was restored)
 	 * - @var string change_password_hash: Hash received after a successful OAuth authorization with a code got by SMS. (If the password is changed right after the access was restored)
 	 * - @var string old_password: Current user password.
 	 * - @var string new_password: New password that will be set as a current
@@ -187,7 +187,7 @@ class Account implements ActionInterface
 	 * - @var integer device_year: Device year.
 	 * - @var string device_id: Unique device ID.
 	 * - @var string system_version: String version of device operating system.
-	 * - @var string settings: Push settings in a [vk.com/dev/push_settings|special format].
+	 * - @var string settings: Push settings in a [vk.ru/dev/push_settings|special format].
 	 * - @var boolean sandbox
 	 * @return mixed
 	 * @throws VKClientException
@@ -277,9 +277,9 @@ class Account implements ActionInterface
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var string device_id: Unique device ID.
-	 * - @var string settings: Push settings in a [vk.com/dev/push_settings|special format].
+	 * - @var string settings: Push settings in a [vk.ru/dev/push_settings|special format].
 	 * - @var string key: Notification key.
-	 * - @var array[string] value: New value for the key in a [vk.com/dev/push_settings|special format].
+	 * - @var array[string] value: New value for the key in a [vk.ru/dev/push_settings|special format].
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException

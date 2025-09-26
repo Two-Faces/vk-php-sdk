@@ -234,7 +234,7 @@ class Fave implements ActionInterface
 	 * Removes link from the user's faves.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string link_id: Link ID (can be obtained by [vk.com/dev/faves.getLinks|faves.getLinks] method).
+	 * - @var string link_id: Link ID (can be obtained by [vk.ru/dev/faves.getLinks|faves.getLinks] method).
 	 * - @var string link: Link URL
 	 * @return mixed
 	 * @throws VKClientException

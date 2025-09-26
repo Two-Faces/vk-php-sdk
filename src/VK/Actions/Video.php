@@ -175,8 +175,8 @@ class Video implements ActionInterface
 	 * - @var integer video_id: Video ID.
 	 * - @var string name: New video title.
 	 * - @var string desc: New video description.
-	 * - @var array[string] privacy_view: Privacy settings in a [vk.com/dev/privacy_setting|special format]. Privacy setting is available for videos uploaded to own profile by user.
-	 * - @var array[string] privacy_comment: Privacy settings for comments in a [vk.com/dev/privacy_setting|special format].
+	 * - @var array[string] privacy_view: Privacy settings in a [vk.ru/dev/privacy_setting|special format]. Privacy setting is available for videos uploaded to own profile by user.
+	 * - @var array[string] privacy_comment: Privacy settings for comments in a [vk.ru/dev/privacy_setting|special format].
 	 * - @var boolean no_comments: Disable comments for the group video.
 	 * - @var boolean repeat: '1' - to repeat the playback of the video, '0' - to play the video once,
 	 * @return mixed

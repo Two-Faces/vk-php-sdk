@@ -172,8 +172,8 @@ class Friends implements ActionInterface
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer user_id: User ID. By default, the current user ID.
-	 * - @var FriendsOrder order: Sort order: , 'name' - by name (enabled only if the 'fields' parameter is used), 'hints' - by rating, similar to how friends are sorted in My friends section, , This parameter is available only for [vk.com/dev/standalone|desktop applications].
-	 * - @var integer list_id: ID of the friend list returned by the [vk.com/dev/friends.getLists|friends.getLists] method to be used as the source. This parameter is taken into account only when the uid parameter is set to the current user ID. This parameter is available only for [vk.com/dev/standalone|desktop applications].
+	 * - @var FriendsOrder order: Sort order: , 'name' - by name (enabled only if the 'fields' parameter is used), 'hints' - by rating, similar to how friends are sorted in My friends section, , This parameter is available only for [vk.ru/dev/standalone|desktop applications].
+	 * - @var integer list_id: ID of the friend list returned by the [vk.ru/dev/friends.getLists|friends.getLists] method to be used as the source. This parameter is taken into account only when the uid parameter is set to the current user ID. This parameter is available only for [vk.ru/dev/standalone|desktop applications].
 	 * - @var integer count: Number of friends to return.
 	 * - @var integer offset: Offset needed to return a specific subset of friends.
 	 * - @var array[FriendsFields] fields: Profile fields to return. Sample values: 'uid', 'first_name', 'last_name', 'nickname', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'domain', 'has_mobile', 'rate', 'contacts', 'education'.
@@ -316,7 +316,7 @@ class Friends implements ActionInterface
 	 * Returns a list of profiles of users whom the current user may know.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var array[FriendsFilter] filter: Types of potential friends to return: 'mutual' - users with many mutual friends , 'contacts' - users found with the [vk.com/dev/account.importContacts|account.importContacts] method , 'mutual_contacts' - users who imported the same contacts as the current user with the [vk.com/dev/account.importContacts|account.importContacts] method
+	 * - @var array[FriendsFilter] filter: Types of potential friends to return: 'mutual' - users with many mutual friends , 'contacts' - users found with the [vk.ru/dev/account.importContacts|account.importContacts] method , 'mutual_contacts' - users who imported the same contacts as the current user with the [vk.ru/dev/account.importContacts|account.importContacts] method
 	 * - @var integer count: Number of suggestions to return.
 	 * - @var integer offset: Offset needed to return a specific subset of suggestions.
 	 * - @var array[FriendsFields] fields: Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online', 'counters'.

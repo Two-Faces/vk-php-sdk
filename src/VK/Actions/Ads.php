@@ -404,7 +404,7 @@ class Ads implements ActionInterface
 	 * Returns a list of possible ad categories.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string lang: Language. The full list of supported languages is [vk.com/dev/api_requests|here].
+	 * - @var string lang: Language. The full list of supported languages is [vk.ru/dev/api_requests|here].
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException

@@ -136,7 +136,7 @@ class Stories implements ActionInterface
 	 * - @var array[integer] user_ids: List of users IDs who can see the story.
 	 * - @var string reply_to_story: ID of the story to reply with the current.
 	 * - @var UploadLinkText link_text: Link text (for community's stories only).
-	 * - @var string link_url: Link URL. Internal links on https://vk.com only.
+	 * - @var string link_url: Link URL. Internal links on https://vk.ru only.
 	 * - @var integer group_id: ID of the community to upload the story (should be verified or with the "fire" icon).
 	 * - @var string clickable_stickers
 	 * @return mixed
@@ -195,7 +195,7 @@ class Stories implements ActionInterface
 	 * - @var array[integer] user_ids: List of users IDs who can see the story.
 	 * - @var string reply_to_story: ID of the story to reply with the current.
 	 * - @var UploadLinkText link_text: Link text (for community's stories only).
-	 * - @var string link_url: Link URL. Internal links on https://vk.com only.
+	 * - @var string link_url: Link URL. Internal links on https://vk.ru only.
 	 * - @var integer group_id: ID of the community to upload the story (should be verified or with the "fire" icon).
 	 * - @var string clickable_stickers
 	 * @return mixed

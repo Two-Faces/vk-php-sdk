@@ -25,7 +25,7 @@ class Auth implements ActionInterface
 
 
 	/**
-	 * Allows to restore account access using a code received via SMS. " This method is only available for apps with [vk.com/dev/auth_direct|Direct authorization] access. "
+	 * Allows to restore account access using a code received via SMS. " This method is only available for apps with [vk.ru/dev/auth_direct|Direct authorization] access. "
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var string phone: User phone number.

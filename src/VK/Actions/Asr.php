@@ -45,7 +45,7 @@ class Asr implements ActionInterface
 
 
 	/**
-	 * Returns the server address to [vk.com/dev/upload_files_2|upload audio files].
+	 * Returns the server address to [vk.ru/dev/upload_files_2|upload audio files].
 	 * @param string $access_token
 	 * @return mixed
 	 * @throws VKClientException
@@ -58,10 +58,10 @@ class Asr implements ActionInterface
 
 
 	/**
-	 * Starts ASR task on [vk.com/dev/upload_files_2|uploaded audio file].
+	 * Starts ASR task on [vk.ru/dev/upload_files_2|uploaded audio file].
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string audio: This parameter is a JSON response returned from [vk.com/dev/upload_files_2|file uploading server].
+	 * - @var string audio: This parameter is a JSON response returned from [vk.ru/dev/upload_files_2|file uploading server].
 	 * - @var AsrModel model: Which model to use for recognition. `neutral` -- general purpose (interviews, TV shows, etc.), `spontaneous` -- for NSFW audios (slang, profanity, etc.)
 	 * @return mixed
 	 * @throws VKClientException

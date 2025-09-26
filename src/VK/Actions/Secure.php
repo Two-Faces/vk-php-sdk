@@ -74,7 +74,7 @@ class Secure implements ActionInterface
 
 
 	/**
-	 * Shows a list of SMS notifications sent by the application using [vk.com/dev/secure.sendSMSNotification|secure.sendSMSNotification] method.
+	 * Shows a list of SMS notifications sent by the application using [vk.ru/dev/secure.sendSMSNotification|secure.sendSMSNotification] method.
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer user_id

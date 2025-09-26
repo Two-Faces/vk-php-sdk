@@ -437,7 +437,7 @@ class Messages implements ActionInterface
 	 * - @var integer group_id: Group ID (for group messages with group access token)
 	 * - @var boolean preserve_order
 	 * - @var integer max_forwards_level
-	 * - @var array[MessagesFields] fields: Additional profile [vk.com/dev/fields|fields] to return.
+	 * - @var array[MessagesFields] fields: Additional profile [vk.ru/dev/fields|fields] to return.
 	 * - @var boolean extended
 	 * @return mixed
 	 * @throws VKClientException
@@ -528,11 +528,11 @@ class Messages implements ActionInterface
 	 * Returns updates in user's private messages.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var integer ts: Last value of the 'ts' parameter returned from the Long Poll server or by using [vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
-	 * - @var integer pts: Last value of 'pts' parameter returned from the Long Poll server or by using [vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
+	 * - @var integer ts: Last value of the 'ts' parameter returned from the Long Poll server or by using [vk.ru/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
+	 * - @var integer pts: Last value of 'pts' parameter returned from the Long Poll server or by using [vk.ru/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
 	 * - @var integer preview_length: Number of characters after which to truncate a previewed message. To preview the full message, specify '0'. "NOTE: Messages are not truncated by default. Messages are truncated by words."
 	 * - @var boolean onlines: '1' - to return history with online users only.
-	 * - @var array[MessagesFields] fields: Additional profile [vk.com/dev/fields|fields] to return.
+	 * - @var array[MessagesFields] fields: Additional profile [vk.ru/dev/fields|fields] to return.
 	 * - @var integer events_limit: Maximum number of events to return.
 	 * - @var integer msgs_limit: Maximum number of messages to return.
 	 * - @var integer max_msg_id: Maximum ID of the message among existing ones in the local copy. Both messages received with API methods (for example, , ), and data received from a Long Poll server (events with code 4) are taken into account.
@@ -559,7 +559,7 @@ class Messages implements ActionInterface
 	 * Returns data required for connection to a Long Poll server.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var boolean need_pts: '1' - to return the 'pts' field, needed for the [vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
+	 * - @var boolean need_pts: '1' - to return the 'pts' field, needed for the [vk.ru/dev/messages.getLongPollHistory|messages.getLongPollHistory] method.
 	 * - @var integer group_id: Group ID (for group messages with user access token)
 	 * - @var integer lp_version: Long poll version
 	 * @return mixed
@@ -877,7 +877,7 @@ class Messages implements ActionInterface
 	 * Sets a previously-uploaded picture as the cover picture of a chat.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string file: Upload URL from the 'response' field returned by the [vk.com/dev/photos.getChatUploadServer|photos.getChatUploadServer] method upon successfully uploading an image.
+	 * - @var string file: Upload URL from the 'response' field returned by the [vk.ru/dev/photos.getChatUploadServer|photos.getChatUploadServer] method upon successfully uploading an image.
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException

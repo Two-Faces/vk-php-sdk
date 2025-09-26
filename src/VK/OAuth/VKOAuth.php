@@ -30,7 +30,7 @@ class VKOAuth
     private const RESPONSE_KEY_ERROR = 'error';
     private const RESPONSE_KEY_ERROR_DESCRIPTION = 'error_description';
 
-    protected const HOST = 'https://oauth.vk.com';
+    protected const HOST = 'https://oauth.vk.ru';
     private const ENDPOINT_AUTHORIZE = '/authorize';
     private const ENDPOINT_ACCESS_TOKEN = '/access_token';
 

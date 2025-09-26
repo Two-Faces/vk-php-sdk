@@ -256,7 +256,7 @@ class Groups implements ActionInterface
 	 * - @var GroupSubject subject: Community subject. Possible values: , *'1' - auto/moto,, *'2' - activity holidays,, *'3' - business,, *'4' - pets,, *'5' - health,, *'6' - dating and communication, , *'7' - games,, *'8' - IT (computers and software),, *'9' - cinema,, *'10' - beauty and fashion,, *'11' - cooking,, *'12' - art and culture,, *'13' - literature,, *'14' - mobile services and internet,, *'15' - music,, *'16' - science and technology,, *'17' - real estate,, *'18' - news and media,, *'19' - security,, *'20' - education,, *'21' - home and renovations,, *'22' - politics,, *'23' - food,, *'24' - industry,, *'25' - travel,, *'26' - work,, *'27' - entertainment,, *'28' - religion,, *'29' - family,, *'30' - sports,, *'31' - insurance,, *'32' - television,, *'33' - goods and services,, *'34' - hobbies,, *'35' - finance,, *'36' - photo,, *'37' - esoterics,, *'38' - electronics and appliances,, *'39' - erotic,, *'40' - humor,, *'41' - society, humanities,, *'42' - design and graphics.
 	 * - @var string email: Organizer email (for events).
 	 * - @var string phone: Organizer phone number (for events).
-	 * - @var string rss: RSS feed address for import (available only to communities with special permission. Contact vk.com/support to get it.
+	 * - @var string rss: RSS feed address for import (available only to communities with special permission. Contact vk.ru/support to get it.
 	 * - @var integer event_start_date: Event start date in Unixtime format.
 	 * - @var integer event_finish_date: Event finish date in Unixtime format.
 	 * - @var integer event_group_id: Organizer community ID (for events only).
@@ -521,7 +521,7 @@ class Groups implements ActionInterface
 
 
 	/**
-	 * Returns [vk.com/dev/callback_api|Callback API] notifications settings.
+	 * Returns [vk.ru/dev/callback_api|Callback API] notifications settings.
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer group_id: Community ID.
@@ -578,7 +578,7 @@ class Groups implements ActionInterface
 	 * @param array $params
 	 * - @var integer offset: Offset needed to return a specific subset of invitations.
 	 * - @var integer count: Number of invitations to return.
-	 * - @var boolean extended: '1' - to return additional [vk.com/dev/fields_groups|fields] for communities..
+	 * - @var boolean extended: '1' - to return additional [vk.ru/dev/fields_groups|fields] for communities..
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException

@@ -184,10 +184,10 @@ class Docs implements ActionInterface
 
 
 	/**
-	 * Saves a document after [vk.com/dev/upload_files_2|uploading it to a server].
+	 * Saves a document after [vk.ru/dev/upload_files_2|uploading it to a server].
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string file: This parameter is returned when the file is [vk.com/dev/upload_files_2|uploaded to the server].
+	 * - @var string file: This parameter is returned when the file is [vk.ru/dev/upload_files_2|uploaded to the server].
 	 * - @var string title: Document title.
 	 * - @var string tags: Document tags.
 	 * - @var boolean return_tags

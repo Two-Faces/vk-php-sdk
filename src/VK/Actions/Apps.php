@@ -64,7 +64,7 @@ class Apps implements ActionInterface
 	 * @param array $params
 	 * - @var integer app_id: Application ID
 	 * - @var array[integer] app_ids: List of application ID
-	 * - @var AppsPlatform platform: platform. Possible values: *'ios' - iOS,, *'android' - Android,, *'winphone' - Windows Phone,, *'web' - приложения на vk.com. By default: 'web'.
+	 * - @var AppsPlatform platform: platform. Possible values: *'ios' - iOS,, *'android' - Android,, *'winphone' - Windows Phone,, *'web' - приложения на vk.ru. By default: 'web'.
 	 * - @var boolean extended
 	 * - @var boolean return_friends
 	 * - @var array[AppsFields] fields: Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'contacts', 'education', 'online', 'counters', 'relation', 'last_seen', 'activity', 'can_write_private_message', 'can_see_all_posts', 'can_post', 'universities', (only if return_friends - 1)
@@ -113,7 +113,7 @@ class Apps implements ActionInterface
 	 * - @var integer count: List size.
 	 * - @var integer offset
 	 * - @var AppsType type: List type. Possible values: * 'invite' - available for invites (don't play the game),, * 'request' - available for request (play the game). By default: 'invite'.
-	 * - @var array[AppsFields] fields: Additional profile fields, see [vk.com/dev/fields|description].
+	 * - @var array[AppsFields] fields: Additional profile fields, see [vk.ru/dev/fields|description].
 	 * - @var string query: Search query string (e.g., 'Vasya Babich').
 	 * @return mixed
 	 * @throws VKClientException

@@ -80,7 +80,7 @@ class Database implements ActionInterface
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var boolean need_all: '1' - to return a full list of all countries, '0' - to return a list of countries near the current user's country (default).
-	 * - @var string code: Country codes in [vk.com/dev/country_codes|ISO 3166-1 alpha-2] standard.
+	 * - @var string code: Country codes in [vk.ru/dev/country_codes|ISO 3166-1 alpha-2] standard.
 	 * - @var integer offset: Offset needed to return a specific subset of countries.
 	 * - @var integer count: Number of countries to return.
 	 * @return mixed
@@ -162,7 +162,7 @@ class Database implements ActionInterface
 	 * Returns a list of regions.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var integer country_id: Country ID, received in [vk.com/dev/database.getCountries|database.getCountries] method.
+	 * - @var integer country_id: Country ID, received in [vk.ru/dev/database.getCountries|database.getCountries] method.
 	 * - @var string q: Search query.
 	 * - @var integer offset: Offset needed to return specific subset of regions.
 	 * - @var integer count: Number of regions to return.
