@@ -275,7 +275,7 @@ class Market implements ActionInterface
 	 * Deletes an item's comment
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var integer owner_id: identifier of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community "
+	 * - @var integer owner_id: identifier of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.ru/apiclub|VK API] community "
 	 * - @var integer comment_id: comment id
 	 * @return mixed
 	 * @throws VKClientException
@@ -508,7 +508,7 @@ class Market implements ActionInterface
 	 * Returns items list for a community.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var integer owner_id: ID of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community "
+	 * - @var integer owner_id: ID of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.ru/apiclub|VK API] community "
 	 * - @var integer album_id
 	 * - @var integer count: Number of items to return.
 	 * - @var integer offset: Offset needed to return a specific subset of results.
@@ -532,7 +532,7 @@ class Market implements ActionInterface
 	 * Returns items album's data
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var integer owner_id: identifier of an album owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community "
+	 * - @var integer owner_id: identifier of an album owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.ru/apiclub|VK API] community "
 	 * - @var array[integer] album_ids: collections identifiers to obtain data from
 	 * @return mixed
 	 * @throws VKClientException
@@ -607,7 +607,7 @@ class Market implements ActionInterface
 	 * - @var integer count: Number of results to return.
 	 * - @var MarketGetCommentsSort sort: Sort order ('asc' - from old to new, 'desc' - from new to old)
 	 * - @var boolean extended: '1' - comments will be returned as numbered objects, in addition lists of 'profiles' and 'groups' objects will be returned.
-	 * - @var array[MarketGetCommentsFields] fields: List of additional profile fields to return. See the [vk.com/dev/fields|details]
+	 * - @var array[MarketGetCommentsFields] fields: List of additional profile fields to return. See the [vk.ru/dev/fields|details]
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException
@@ -897,7 +897,7 @@ class Market implements ActionInterface
 	 * Restores a recently deleted comment
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var integer owner_id: identifier of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community "
+	 * - @var integer owner_id: identifier of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.ru/apiclub|VK API] community "
 	 * - @var integer comment_id: deleted comment id
 	 * @return mixed
 	 * @throws VKClientException

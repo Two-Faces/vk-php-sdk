@@ -1,6 +1,6 @@
 {
-  "name": "vkcom/vk-php-sdk",
-  "version": "5.199.0",
+  "name": "two-faces/vk-php-sdk",
+  "version": "5.199.100",
   "description": "VK PHP SDK",
   "keywords": [
     "vk",

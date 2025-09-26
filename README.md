@@ -1,12 +1,12 @@
-# vkcom/vk-php-sdk
+# two-faces/vk-php-sdk
 
 PHP library for VK API interaction, includes OAuth 2.0 authorization and API methods. Full VK API features documentation
-can be found [here](http://vk.com/dev).
+can be found [here](http://vk.ru/dev).
 
 This library has been created using the VK API JSON Schema. It can be
-found [here](https://github.com/VKCOM/vk-api-schema). It uses VK API [version](https://vk.com/dev/versions) 5.199
+found [here](https://github.com/VKCOM/vk-api-schema). It uses VK API [version](https://vk.ru/dev/versions) 5.199
 
-[![Packagist](https://img.shields.io/packagist/v/vkcom/vkcom/vk-php-sdk.svg)](https://packagist.org/packages/vkcom/vkcom/vk-php-sdk)
+[![Packagist](https://img.shields.io/packagist/v/two-faces/two-faces/vk-php-sdk.svg)](https://packagist.org/packages/two-faces/vk-php-sdk)
 
 ## 1. Prerequisites
 
@@ -17,7 +17,7 @@ found [here](https://github.com/VKCOM/vk-api-schema). It uses VK API [version](h
 The VK PHP SDK can be installed using Composer by running the following command:
 
 ```sh
-composer require vkcom/vk-php-sdk
+composer require two-faces/vk-php-sdk
 ```
 
 ## 3. Initialization
@@ -40,16 +40,16 @@ $vk = new VKApiClient('5.199', \VK\Client\Enums\VKLanguage::ENGLISH);
 
 ## 4. Authorization
 
-The library provides the authorization flows for user based on OAuth 2.0 protocol implementation in vk.com API. Please
-read the full [documentation](https://vk.com/dev/access_token) before you start.
+The library provides the authorization flows for user based on OAuth 2.0 protocol implementation in vk.ru API. Please
+read the full [documentation](https://vk.ru/dev/access_token) before you start.
 
 ### 4.1. Authorization Code Flow
 
 OAuth 2.0 Authorization Code Flow allows calling methods from the server side.
 
 This flow includes two steps — obtaining an authorization code and exchanging the code for an access token. Primarily
-you should obtain the "code" ([manual user access](https://vk.com/dev/authcode_flow_user)
-and [manual community access](https://vk.com/dev/authcode_flow_group)) by redirecting the user to the authorization page
+you should obtain the "code" ([manual user access](https://vk.ru/dev/authcode_flow_user)
+and [manual community access](https://vk.ru/dev/authcode_flow_group)) by redirecting the user to the authorization page
 using the following method:
 
 Create `VKOAuth` object first:
@@ -85,8 +85,8 @@ $groups_ids = [1, 2];
 $browser_url = $oauth->getAuthorizeUrl(\VK\OAuth\VKOAuthResponseType::CODE, $client_id, $redirect_uri, $display, $scope, $state, $groups_ids);
 ```
 
-[User access key](https://vk.com/dev/permissions?f=1.%20%D0%9F%D1%80%D0%B0%D0%B2%D0%B0%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F)
-and [community access key](https://vk.com/dev/permissions?f=2.%20%D0%9F%D1%80%D0%B0%D0%B2%D0%B0%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%B0%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0)
+[User access key](https://vk.ru/dev/permissions?f=1.%20%D0%9F%D1%80%D0%B0%D0%B2%D0%B0%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F)
+and [community access key](https://vk.ru/dev/permissions?f=2.%20%D0%9F%D1%80%D0%B0%D0%B2%D0%B0%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%B0%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0)
 uses different values inside scope array
 
 After successful authorization user's browser will be redirected to the specified **redirect_uri**. Meanwhile the code
@@ -115,8 +115,8 @@ The **redirect_uri** should be the URL that was used to get a code at the first 
 
 In difference with authorization code flow this flow gives you temporary access key.
 
-Read more about [user access key](https://vk.com/dev/implicit_flow_user)
-and [community access key](https://vk.com/dev/implicit_flow_group).
+Read more about [user access key](https://vk.ru/dev/implicit_flow_user)
+and [community access key](https://vk.ru/dev/implicit_flow_group).
 
 First step to get access using Implicit flow is creating `VKOauth` object:
 
@@ -179,7 +179,7 @@ access_token_**XXXXXX** is community access token where XXXXXX is community iden
 
 ## 5. API Requests
 
-You can find the full list of VK API methods [here](https://vk.com/dev/methods).
+You can find the full list of VK API methods [here](https://vk.ru/dev/methods).
 
 ### 5.1. Request sample
 
@@ -195,7 +195,7 @@ $response = $vk->users()->get($access_token, [
 
 ### 5.2. Uploading Photos into a Private Message
 
-Please read [the full manual](https://vk.com/dev/upload_files?f=4.%20Uploading%20Photos%20into%20a%20Private%20Message)
+Please read [the full manual](https://vk.ru/dev/upload_files?f=4.%20Uploading%20Photos%20into%20a%20Private%20Message)
 before the start.
 
 Call **photos.getMessagesUploadServer** to receive an upload address:
@@ -229,7 +229,7 @@ photo.
 
 ### 5.3. Uploading Video Files
 
-Please read [the full manual](https://vk.com/dev/upload_files_2?f=9.%20Uploading%20Video%20Files) before the start.
+Please read [the full manual](https://vk.ru/dev/upload_files_2?f=9.%20Uploading%20Video%20Files) before the start.
 
 Call **video.save** to get a video upload server address:
 
@@ -314,7 +314,7 @@ $executor->listen($timestamp);
 ### 6.2. Callback API
 
 CallbackApi handler will wait for event notifications form VK. Once an event has occurred, you will be notified of it
-and will be able to handle it. More information [here](https://vk.com/dev/callback_api).
+and will be able to handle it. More information [here](https://vk.ru/dev/callback_api).
 
 To start using Callback API you need to configure it under the "Manage community" tab of your community page.
 

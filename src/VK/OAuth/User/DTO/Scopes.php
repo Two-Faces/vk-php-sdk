@@ -3,7 +3,7 @@
 namespace VK\OAuth\User\DTO;
 
 /**
- * see https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/work-with-user-info/scopes
+ * see https://id.vk.ru/about/business/go/docs/ru/vkid/latest/vk-id/connection/work-with-user-info/scopes
  */
 class Scopes
 {

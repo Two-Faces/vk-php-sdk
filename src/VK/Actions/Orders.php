@@ -51,7 +51,7 @@ class Orders implements ActionInterface
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer order_id: order ID.
-	 * - @var OrdersChangeStateAction action: action to be done with the order. Available actions: *cancel - to cancel unconfirmed order. *charge - to confirm unconfirmed order. Applies only if processing of [vk.com/dev/payments_status|order_change_state] notification failed. *refund - to cancel confirmed order.
+	 * - @var OrdersChangeStateAction action: action to be done with the order. Available actions: *cancel - to cancel unconfirmed order. *charge - to confirm unconfirmed order. Applies only if processing of [vk.ru/dev/payments_status|order_change_state] notification failed. *refund - to cancel confirmed order.
 	 * - @var integer app_order_id: internal ID of the order in the application.
 	 * - @var boolean test_mode: if this parameter is set to 1, this method returns a list of test mode orders. By default - 0.
 	 * @return mixed

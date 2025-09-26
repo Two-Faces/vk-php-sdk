@@ -24,7 +24,7 @@ class Widgets implements ActionInterface
 
 
 	/**
-	 * Gets a list of comments for the page added through the [vk.com/dev/Comments|Comments widget].
+	 * Gets a list of comments for the page added through the [vk.ru/dev/Comments|Comments widget].
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer widget_api_id
@@ -45,7 +45,7 @@ class Widgets implements ActionInterface
 
 
 	/**
-	 * Gets a list of application/site pages where the [vk.com/dev/Comments|Comments widget] or [vk.com/dev/Like|Like widget] is installed.
+	 * Gets a list of application/site pages where the [vk.ru/dev/Comments|Comments widget] or [vk.ru/dev/Like|Like widget] is installed.
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer widget_api_id

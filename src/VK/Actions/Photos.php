@@ -239,8 +239,8 @@ class Photos implements ActionInterface
 	 * - @var boolean rev: Sort order: '1' - reverse chronological, '0' - chronological
 	 * - @var boolean extended: '1' - to return additional 'likes', 'comments', and 'tags' fields, '0' - (default)
 	 * - @var string feed_type: Type of feed obtained in 'feed' field of the method.
-	 * - @var integer feed: unixtime, that can be obtained with [vk.com/dev/newsfeed.get|newsfeed.get] method in date field to get all photos uploaded by the user on a specific day, or photos the user has been tagged on. Also, 'uid' parameter of the user the event happened with shall be specified.
-	 * - @var boolean photo_sizes: '1' - to return photo sizes in a [vk.com/dev/photo_sizes|special format]
+	 * - @var integer feed: unixtime, that can be obtained with [vk.ru/dev/newsfeed.get|newsfeed.get] method in date field to get all photos uploaded by the user on a specific day, or photos the user has been tagged on. Also, 'uid' parameter of the user the event happened with shall be specified.
+	 * - @var boolean photo_sizes: '1' - to return photo sizes in a [vk.ru/dev/photo_sizes|special format]
 	 * - @var integer offset
 	 * - @var integer count
 	 * @return mixed
@@ -299,7 +299,7 @@ class Photos implements ActionInterface
 	 * - @var boolean extended: '1' - to return detailed information about photos
 	 * - @var integer offset: Offset needed to return a specific subset of photos. By default, '0'.
 	 * - @var integer count: Number of photos to return.
-	 * - @var boolean photo_sizes: '1' - to return image sizes in [vk.com/dev/photo_sizes|special format].
+	 * - @var boolean photo_sizes: '1' - to return image sizes in [vk.ru/dev/photo_sizes|special format].
 	 * - @var boolean no_service_albums: '1' - to return photos only from standard albums, '0' - to return all photos including those in service albums, e.g., 'My wall photos' (default)
 	 * - @var boolean need_hidden: '1' - to show information about photos being hidden from the block above the wall.
 	 * - @var boolean skip_hidden: '1' - not to return photos being hidden from the block above the wall. Works only with owner_id>0, no_service_albums is ignored.
@@ -727,9 +727,9 @@ class Photos implements ActionInterface
 	 * @param array $params
 	 * - @var integer album_id: ID of the album to save photos to.
 	 * - @var integer group_id: ID of the community to save photos to.
-	 * - @var integer server: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
-	 * - @var string photos_list: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
-	 * - @var string hash: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
+	 * - @var integer server: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
+	 * - @var string photos_list: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
+	 * - @var string hash: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
 	 * - @var number latitude: Geographical latitude, in degrees (from '-90' to '90').
 	 * - @var number longitude: Geographical longitude, in degrees (from '-180' to '180').
 	 * - @var string caption: Text describing the photo. 2048 digits max.
@@ -752,9 +752,9 @@ class Photos implements ActionInterface
 	 * @param string $access_token
 	 * @param array $params
 	 * - @var integer group_id: Community ID.
-	 * - @var string photo: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
-	 * - @var integer server: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
-	 * - @var string hash: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
+	 * - @var string photo: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
+	 * - @var integer server: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
+	 * - @var string hash: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException
@@ -769,10 +769,10 @@ class Photos implements ActionInterface
 
 
 	/**
-	 * Saves a photo after being successfully uploaded. URL obtained with [vk.com/dev/photos.getMessagesUploadServer|photos.getMessagesUploadServer] method.
+	 * Saves a photo after being successfully uploaded. URL obtained with [vk.ru/dev/photos.getMessagesUploadServer|photos.getMessagesUploadServer] method.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string photo: Parameter returned when the photo is [vk.com/dev/upload_files|uploaded to the server].
+	 * - @var string photo: Parameter returned when the photo is [vk.ru/dev/upload_files|uploaded to the server].
 	 * - @var integer server
 	 * - @var string hash
 	 * @return mixed
@@ -797,8 +797,8 @@ class Photos implements ActionInterface
 	 * - @var integer crop_y
 	 * - @var integer crop_width
 	 * - @var string response_json
-	 * - @var string hash: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
-	 * - @var string photo: Parameter returned when photos are [vk.com/dev/upload_files|uploaded to server].
+	 * - @var string hash: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
+	 * - @var string photo: Parameter returned when photos are [vk.ru/dev/upload_files|uploaded to server].
 	 * - @var boolean is_video_cover
 	 * @return mixed
 	 * @throws VKClientException
@@ -813,12 +813,12 @@ class Photos implements ActionInterface
 
 
 	/**
-	 * Saves a profile or community photo. Upload URL can be got with the [vk.com/dev/photos.getOwnerPhotoUploadServer|photos.getOwnerPhotoUploadServer] method.
+	 * Saves a profile or community photo. Upload URL can be got with the [vk.ru/dev/photos.getOwnerPhotoUploadServer|photos.getOwnerPhotoUploadServer] method.
 	 * @param string $access_token
 	 * @param array $params
-	 * - @var string server: parameter returned after [vk.com/dev/upload_files|photo upload].
-	 * - @var string hash: parameter returned after [vk.com/dev/upload_files|photo upload].
-	 * - @var string photo: parameter returned after [vk.com/dev/upload_files|photo upload].
+	 * - @var string server: parameter returned after [vk.ru/dev/upload_files|photo upload].
+	 * - @var string hash: parameter returned after [vk.ru/dev/upload_files|photo upload].
+	 * - @var string photo: parameter returned after [vk.ru/dev/upload_files|photo upload].
 	 * @return mixed
 	 * @throws VKClientException
 	 * @throws VKApiException
@@ -837,7 +837,7 @@ class Photos implements ActionInterface
 	 * @param array $params
 	 * - @var integer user_id: ID of the user on whose wall the photo will be saved.
 	 * - @var integer group_id: ID of community on whose wall the photo will be saved.
-	 * - @var string photo: Parameter returned when the the photo is [vk.com/dev/upload_files|uploaded to the server].
+	 * - @var string photo: Parameter returned when the the photo is [vk.ru/dev/upload_files|uploaded to the server].
 	 * - @var integer server
 	 * - @var string hash
 	 * - @var number latitude: Geographical latitude, in degrees (from '-90' to '90').
